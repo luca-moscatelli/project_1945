@@ -69,6 +69,8 @@ SDL_Window *global_window;
 game_object island[3];
 game_object water;
 
+int b;
+
 
 type_player player_plane;
 
