@@ -8,7 +8,7 @@
 int main()
 {
 
-    
+    int re;
 
     init();
 
