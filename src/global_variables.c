@@ -70,6 +70,8 @@ game_object island[3];
 game_object water;
 int abaco;
 int ciao;
+int asas;
+int wert;
 
 type_player player_plane;
 
