@@ -8,8 +8,6 @@
 int main()
 {
 
-    int re;
-
     init();
 
     while (!done)
