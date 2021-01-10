@@ -3,11 +3,12 @@
 #ifndef ENEMY_MNG
 #define ENEMY_MNG
 
+
 #include "global_variables.h"
 //#include "bulletMng.h"
 #include <stdlib.h>
 
-enum 
+enum
 {
     move,
     attack,
@@ -15,20 +16,19 @@ enum
 };
 typedef unsigned char enemy_state;
 
-typedef struct 
+typedef struct
 {
     float hp;
-    game_object* go;
+    game_object *go;
     enemy_state state;
     float finishPointY;
     float ExplosionTime;
-    
 
-}type_enemy;
+} type_enemy;
 
 float enemy_n;
 
-type_enemy* enemy;
+type_enemy *enemy;
 
 const float CONST_ExplosionTime = 90.f;
 
@@ -36,6 +36,10 @@ float enemyVelocity = 0.08f;
 SDL_Texture *enemyPlane_texture[3];
 SDL_Texture *enemyExplosion_texture;
 SDL_Rect *explosionTexure_Rect[6];
+
+
+
+
 
 void enemyInit()
 {
@@ -86,7 +90,7 @@ void _moveUpdate(type_enemy *e)
 
 void _attackUpdate(type_enemy *e)
 {
-      //  shoot_enemyBullet(e);
+ //   shoot_enemyBullet(e);
 
     if (e->hp <= 0)
     {
@@ -189,5 +193,7 @@ void renderEnemy()
         renderGameObject(enemy[i].go);
     }
 }
+
+
 
 #endif

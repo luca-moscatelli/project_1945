@@ -663,8 +663,12 @@ stdlib.h
 -
 
 ../include/bulletMng.h
-bulletMng.c
-../include/bulletMng.c
+global_variables.h
+../include/global_variables.h
+SDL.h
+../include/SDL.h
+enemyMng.h
+../include/enemyMng.h
 
 ../include/enemyMng.h
 global_variables.h
@@ -699,8 +703,8 @@ playerMng.h
 ../include/playerMng.h
 
 ../include/global_variables.h
-global_variables.c
-../include/global_variables.c
+SDL.h
+../include/SDL.h
 
 ../include/playerMng.h
 global_variables.h
