@@ -12,7 +12,6 @@
 
 float offset_background;
 
-float islandVelocity = 0.07f;
 
 float bgVelocity = 100;
 
@@ -27,7 +26,7 @@ int _updateIsland()
             island[i].target_rect->x = RangedRandDemo(10, SCREEN_WIDTH - 40);
         }
 
-        island[i].target_rect->y += bgVelocity * global_delta_time;
+        island[i].target_rect->y += bgVelocity * STANDARD_VELOCITY;
     }
 
     return 0;
@@ -42,7 +41,7 @@ int _updateSea()
 
     water.target_rect->y = offset_background;
 
-    offset_background += bgVelocity * global_delta_time;
+    offset_background += bgVelocity * STANDARD_VELOCITY;
 
     return 0;
 }
@@ -57,7 +56,7 @@ void update()
 
     _updateSea();
 
-    UpdatePlayerCounter();
+    UpdatePlayer();
 }
 
 #endif

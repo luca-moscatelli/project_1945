@@ -3,13 +3,10 @@
 #ifndef RENDER_FUNC
 #define RENDER_FUNC
 
-
 #include "global_variables.h"
 #include "enemyMng.h"
 #include "bulletMng.h"
 #include "GuiMng.h"
-
-
 
 Uint32 plane_frame_n = 0;
 
@@ -54,19 +51,19 @@ void _setFrame(game_object *go)
 {
     if (plane_frame_n == 0)
     {
-        go->texture_rect->x=0;
+        go->texture_rect->x = 0;
         return;
     }
 
     if (plane_frame_n == 1)
     {
-        go->texture_rect->x=go->texture_rect->w*1;
+        go->texture_rect->x = go->texture_rect->w * 1;
         return;
     }
 
     if (plane_frame_n == 2)
     {
-        go->texture_rect->x=go->texture_rect->w*2;
+        go->texture_rect->x = go->texture_rect->w * 2;
         return;
     }
 }
@@ -76,7 +73,7 @@ void _setPlaneFrame()
 
     if (plane_frame_n == 0)
     {
-       
+
         plane_frame_n = 1;
         return;
     }
@@ -101,21 +98,33 @@ int _renderPlane()
     if (timePlaneFrame <= 0)
     {
         _setPlaneFrame();
-        _setFrame(player_plane.go);
-        for (size_t i = 0; i < enemy_n; i++)
-        {
-            if(enemy[i].state==dead){
-                _SetFrameExplosion(&enemy[i]);
-                continue;
-            }
-            _setFrame(enemy[i].go);
 
-        }
-        
         timePlaneFrame = CONST_timePlaneFrame;
     }
 
-    renderGameObject(player_plane.go);
+    if (player_plane.state == player_live)
+    {
+        _setFrame(player_plane.go);
+    }
+    if (player_plane.state == player_onDead)
+    {
+        _SetFrameExplosion(player_plane.go, player_plane.ExplosionTime, Player_explosionTexure_Rect);
+    }
+
+    for (size_t i = 0; i < enemy_n; i++)
+    {
+        if (enemy[i].state == dead)
+        {
+            _SetFrameExplosion(enemy[i].go, enemy[i].ExplosionTime, Enemy_explosionTexure_Rect);
+            continue;
+        }
+        _setFrame(enemy[i].go);
+    }
+
+    if (player_plane.state != player_dead)
+    {
+        renderGameObject(player_plane.go);
+    }
 
     timePlaneFrame -= global_delta_time;
 

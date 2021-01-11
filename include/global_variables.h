@@ -1,18 +1,31 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
+#define STANDARD_VELOCITY (unit_size_norm * global_delta_time)
 #define N_LIFE 3
 #define MAX_HP 100.f
-
-
-
 
 #ifndef GLOBAL_VAR
 #define GLOBAL_VAR
 
-#include "SDL.h"
+#include <SDL_image.h>
+#include <SDL_mixer.h>
 //#include "bulletMng.h"
 
+enum
+{
+    move,
+    attack,
+    dead
+};
+typedef unsigned char enemy_state;
 
+enum
+{
+    player_live,
+    player_onDead,
+    player_dead
+};
+typedef unsigned char player_state;
 
 enum boolean_enum
 {
@@ -40,6 +53,9 @@ typedef struct
     int finishPointY;
     float ExplosionTime;
     float hp;
+    float explosion_time;
+    float respawn_time;
+    player_state state;
     uint32_t life;
 
 } type_player;
@@ -50,16 +66,13 @@ typedef struct
     SDL_FRect *target_rect;
 } texture_rect;
 
+vec2 global_unitSize;
 
-
-
-vec2 global_unitSize = {40, 40};
-
+float unit_size_norm;
 
 int global_unitScreenWidth = 0;
 int global_unitScreenHeight = 0;
 float global_delta_time = 0;
-
 
 Uint64 curr_count = 0;
 Uint64 last_count = 0;
@@ -73,13 +86,40 @@ SDL_Renderer *global_renderer;
 
 SDL_Window *global_window;
 
-
-
-
+Mix_Music *background_music;
 
 //assets game variables
 
 //texture
+
+SDL_Texture *player_explosion_texture;
+SDL_Rect *Player_explosionTexure_Rect[7];
+
+typedef struct
+{
+    float hp;
+    game_object *go;
+    enemy_state state;
+    float finishPointY;
+    float ExplosionTime;
+    float shootCount;
+
+} type_enemy;
+
+float enemy_n;
+
+type_enemy *enemy;
+
+typedef struct
+{
+    boolean free;
+    game_object *go;
+
+} type_bullet;
+
+type_bullet *player_bullet;
+
+type_bullet *enemy_bullet;
 
 
 
@@ -92,33 +132,11 @@ game_object water;
 type_player player_plane;
 
 
-boolean _CheckPlayerLife()
-{
-
-    if (player_plane.hp <= 0)
-    {
-        player_plane.life--;
-        if (player_plane.life == 0)
-        {
-            return true;
-        }
-        player_plane.hp=MAX_HP;
-        return false;
-
-    }
-    return false;
-}
-
-
-
-void playerAddDamage(float damage){
-    player_plane.hp-=damage;
-    done=_CheckPlayerLife();
-}
 
 
 SDL_Texture *create_texture(char *source_file)
 {
+
     SDL_Surface *surface = IMG_Load(source_file);
     SDL_Texture *texture = SDL_CreateTextureFromSurface(global_renderer, surface);
     SDL_FreeSurface(surface);
@@ -148,30 +166,26 @@ SDL_FRect *create_Frect(float x, float y, float w, float h)
     return rect;
 }
 
+game_object *create_gameObject(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect)
+{
 
+    game_object *go = (game_object *)malloc(sizeof(game_object));
 
-
-game_object* create_gameObject(SDL_Texture* texture,SDL_Rect* texture_rect,SDL_FRect* target_rect){
-
-    game_object* go=(game_object*)malloc(sizeof(game_object));
-
-    go->texture=texture;
-    go->texture_rect=texture_rect;
-    go->target_rect=target_rect;
+    go->texture = texture;
+    go->texture_rect = texture_rect;
+    go->target_rect = target_rect;
 
     return go;
 }
 
-void destroy_gameObject(game_object* go){
+void destroy_gameObject(game_object *go)
+{
 
     free(go->target_rect);
     free(go->texture);
     free(go->texture_rect);
     free(go);
-
 }
-
-
 
 int RangedRandDemo(int range_min, int range_max)
 {
@@ -219,6 +233,19 @@ boolean check_collision(SDL_FRect a, SDL_FRect b)
     return true;
 }
 
+void shoot_enemyBullet(type_enemy *e)
+{
+    for (size_t i = 0; i < 30; i++)
+    {
+        if (enemy_bullet[i].free)
+        {
+            enemy_bullet[i].go->target_rect->x = e->go->target_rect->x + e->go->target_rect->w * 0.16f + enemy_bullet[i].go->target_rect->w * 0.5f;
+            enemy_bullet[i].go->target_rect->y = e->go->target_rect->y + 30;
+            enemy_bullet[i].free = false;
+            return;
+        }
+    }
+}
 
 
 
@@ -227,6 +254,5 @@ int renderGameObject(game_object *go)
     SDL_RenderCopyF(global_renderer, go->texture, go->texture_rect, go->target_rect);
     return 0;
 }
-
 
 #endif

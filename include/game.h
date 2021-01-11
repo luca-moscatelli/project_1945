@@ -1,8 +1,6 @@
 #ifndef GAME
 #define GAME
 
-
-
 #include "SDL.h"
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
@@ -16,7 +14,6 @@
 #include "GuiMng.h"
 #include "playerMng.h"
 
-
 void _initGameAsset()
 {
 
@@ -25,11 +22,11 @@ void _initGameAsset()
     water.target_rect = create_Frect(0, 0, global_unitSize.x, global_unitSize.y);
 
     //init player
-    SDL_Texture *tex = create_texture("resources/assets/player/myplane_strip3.png");
-    SDL_Rect *texRect = create_rect(0, 0, 195 / 3, 65);
-    SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f,SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
+    // SDL_Texture *tex = create_texture("resources/assets/player/myplane_strip3.png");
+    // SDL_Rect *texRect = create_rect(0, 0, 195 / 3, 65);
+    // SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
 
-    player_plane.go = create_gameObject(tex, texRect, targetRect);
+    // player_plane.go = create_gameObject(tex, texRect, targetRect);
     //--init player
 
     island[0].texture = create_texture("resources/assets/map/island1.png");
@@ -82,9 +79,26 @@ void _input()
 int init()
 {
     SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_AUDIO);
+    Mix_Init(MIX_INIT_OGG);
+    Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, 1, 4096);
 
-    global_unitScreenWidth = 640 / global_unitSize.x;
-    global_unitScreenHeight = 480 / global_unitSize.y;
+    background_music = Mix_LoadMUS("resources/assets/audio/background.mp3");
+
+    Mix_VolumeMusic(70);
+
+    Mix_PlayMusic(background_music, -1);
+
+  //  Mix_Volume(-1, 0);
+
+  unit_size_norm=  (float)SCREEN_HEIGHT/480.f;
+
+    global_unitSize.x=40*unit_size_norm;
+    global_unitSize.y=40*unit_size_norm;
+
+
+    global_unitScreenWidth = SCREEN_WIDTH / global_unitSize.x;
+    global_unitScreenHeight = SCREEN_HEIGHT / global_unitSize.y;
 
     global_window = SDL_CreateWindow(
         "Project “1945”",
@@ -113,6 +127,10 @@ int init()
     update_time = 0.f;
     time_counter = 0.f;
 
+    last_count = curr_count;
+    curr_count = SDL_GetPerformanceCounter();
+    global_delta_time = (float)(curr_count - last_count) / ((float)SDL_GetPerformanceFrequency());
+
     done = false;
 
     _initGameAsset();
@@ -136,7 +154,7 @@ void play()
 
     last_count = curr_count;
     curr_count = SDL_GetPerformanceCounter();
-    global_delta_time = (float)(curr_count - last_count) / (float)SDL_GetPerformanceFrequency();
+    global_delta_time = (float)(curr_count - last_count) / ((float)SDL_GetPerformanceFrequency());
     int fps = (int)(1.f / global_delta_time);
 
     update_time += global_delta_time;
@@ -155,9 +173,6 @@ void play()
 
     // Blit
     SDL_RenderPresent(global_renderer);
-
 }
-
-
 
 #endif

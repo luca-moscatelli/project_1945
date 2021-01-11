@@ -665,10 +665,14 @@ stdlib.h
 ../include/bulletMng.h
 global_variables.h
 ../include/global_variables.h
-SDL.h
-../include/SDL.h
+SDL_image.h
+-
+SDL_mixer.h
+-
 enemyMng.h
 ../include/enemyMng.h
+GuiMng.h
+../include/GuiMng.h
 
 ../include/enemyMng.h
 global_variables.h
@@ -703,14 +707,16 @@ playerMng.h
 ../include/playerMng.h
 
 ../include/global_variables.h
-SDL.h
-../include/SDL.h
+SDL_image.h
+-
+SDL_mixer.h
+-
 
 ../include/playerMng.h
 global_variables.h
 ../include/global_variables.h
-SDL.h
-../include/SDL.h
+SDL_image.h
+-
 
 ../include/renderFunc.h
 global_variables.h

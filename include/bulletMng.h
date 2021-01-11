@@ -1,40 +1,21 @@
 #define PLAYER_BULLET_N 30
 #define ENEMY_BULLET_N 30
 
-
-
-
-
 #ifndef BULLET_MNG
 #define BULLET_MNG
 
-
-
 #include "global_variables.h"
-#include "SDL.h"
+#include <SDL_image.h>
+#include <SDL_mixer.h>
 #include "enemyMng.h"
+#include "GuiMng.h"
 
 
-typedef struct
-{
-    boolean free;
-    game_object *go;
-
-} type_bullet;
-
-
-
-
-
-
-
-
-type_bullet *player_bullet;
-
-type_bullet *enemy_bullet;
 
 float player_bullet_damage = 20;
-float enemy_bullet_damage = 30;
+float enemy_bullet_damage = 10;
+float player_bullet_velocity=150.f;
+Mix_Chunk *soundExplosion;
 
 void bulletInit()
 {
@@ -59,6 +40,9 @@ void bulletInit()
         enemy_bullet[i].go = create_gameObject(tex, rect_Tex, target_Rect);
         enemy_bullet[i].free = true;
     }
+
+    soundExplosion = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav");
+    Mix_VolumeChunk(soundExplosion,80);
 }
 
 void shoot_playerBullet()
@@ -68,7 +52,9 @@ void shoot_playerBullet()
     {
         if (player_bullet[i].free)
         {
-            player_bullet[i].go->target_rect->x = player_plane.go->target_rect->x + player_plane.go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
+            Mix_PlayChannel(-1, soundExplosion,0);
+            player_bullet[i]
+                .go->target_rect->x = player_plane.go->target_rect->x + player_plane.go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
             player_bullet[i].go->target_rect->y = player_plane.go->target_rect->y - 30;
             player_bullet[i].free = false;
             return;
@@ -76,19 +62,6 @@ void shoot_playerBullet()
     }
 }
 
-void shoot_enemyBullet(type_enemy *e)
-{
-    for (size_t i = 0; i < ENEMY_BULLET_N; i++)
-    {
-        if (enemy_bullet[i].free)
-        {
-            enemy_bullet[i].go->target_rect->x = e->go->target_rect->x + e->go->target_rect->w * 0.16f + enemy_bullet[i].go->target_rect->w * 0.5f;
-            enemy_bullet[i].go->target_rect->y = e->go->target_rect->y + 30;
-            enemy_bullet[i].free = false;
-            return;
-        }
-    }
-}
 
 void _updatePlayerBullet()
 {
@@ -109,7 +82,12 @@ void _updatePlayerBullet()
                 }
             }
 
-            player_bullet[i].go->target_rect->y -= 0.05;
+            
+
+            player_bullet[i].go->target_rect->y -=player_bullet_velocity*STANDARD_VELOCITY;
+            float a =STANDARD_VELOCITY;
+
+
 
             if (player_bullet[i].go->target_rect->y <= -30)
             {
@@ -129,14 +107,15 @@ void _updateEnemyBullet()
             if (check_collision(*((enemy_bullet[i]).go)->target_rect, *((player_plane.go)->target_rect)))
             {
 
-                playerAddDamage(enemy_bullet_damage);
+                player_plane.hp-=enemy_bullet_damage;
+                UpdateGui();
                 enemy_bullet[i].free = true;
                 return;
             }
 
             enemy_bullet[i].go->target_rect->y += 0.05;
 
-            if ( enemy_bullet[i].go->target_rect->y >= SCREEN_HEIGHT)
+            if (enemy_bullet[i].go->target_rect->y >= SCREEN_HEIGHT)
             {
                 enemy_bullet[i].free = true;
             }
@@ -169,6 +148,5 @@ int renderBullet()
 
     return 0;
 }
-
 
 #endif

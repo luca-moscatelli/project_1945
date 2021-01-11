@@ -7,33 +7,111 @@
 #define PLAYER_LIMIT_DOWN \
     SCREEN_HEIGHT - gui->target_rect->h - player_plane.go->target_rect->h
 #define PLAYER_RATIO_TIME 3.f
-
+#define PLAYER_RESPAWN_TIME 150.f
 
 #ifndef PLAYER_MNG
 #define PLAYER_MNG
 
-
 #include "global_variables.h"
-#include "SDL.h"
+#include <SDL_image.h>
 
 float player_ratioCont;
 
+SDL_Texture *texture_plane;
+SDL_Rect *texRect_plane;
+
 void playerInit()
 {
-    SDL_Texture *tex = create_texture("resources/assets/player/myplane_strip3.png");
-    SDL_Rect *texRect = create_rect(0, 0, 195 / 3, 65);
-    SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
+    texture_plane = create_texture("resources/assets/player/myplane_strip3.png");
+    texRect_plane = create_rect(0, 0, 195 / 3, 65);
+    SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f - global_unitSize.x * 0.5f, SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
 
-    player_plane.go = create_gameObject(tex, texRect, targetRect);
+    for (size_t i = 0; i < 7; i++)
+    {
+        Player_explosionTexure_Rect[i] = create_rect(i * 65, 0, 65, 65);
+    }
+
+    player_plane.ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
+    player_plane.respawn_time = PLAYER_RESPAWN_TIME;
+    player_plane.state = player_live;
+    player_plane.go = create_gameObject(texture_plane, texRect_plane, targetRect);
     player_plane.hp = 100;
     player_plane.life = 3;
+
+    player_explosion_texture = create_texture("resources/assets/player/explosion2_strip7.png");
 }
 
-void UpdatePlayerCounter()
+void playerLiveUpdate()
 {
     player_ratioCont -= 0.01;
+
+    if (player_plane.hp <= 0)
+    {
+        player_plane.go->texture = player_explosion_texture;
+        player_plane.state = player_onDead;
+        return;
+    }
 }
 
+void playerOndeadUpdate()
+{
+    player_plane.ExplosionTime -= 0.05f;
+
+    if (player_plane.ExplosionTime <= 0)
+    {
+        player_plane.state = player_dead;
+    }
+}
+
+void playerDeadUpdate()
+{
+    player_plane.respawn_time -= 0.03f;
+
+    if (player_plane.respawn_time <= 0)
+    {
+        player_plane.life--;
+        if (player_plane.life == 0)
+        {
+            done = true;
+            return;
+        }
+        player_plane.hp = MAX_HP;
+        player_plane.state = player_live;
+        player_plane.go->texture = texture_plane;
+
+        player_plane.go->texture_rect = texRect_plane;
+        player_plane.go->texture_rect->x = 0;
+        player_plane.go->texture_rect->y = 0;
+
+        player_plane.ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
+        player_plane.respawn_time = PLAYER_RESPAWN_TIME;
+
+        player_plane.go->target_rect->x = SCREEN_WIDTH * 0.5f - global_unitSize.x * 0.5f;
+        player_plane.go->target_rect->y = SCREEN_HEIGHT * 0.65f;
+        UpdateGui();
+    }
+}
+
+void UpdatePlayer()
+{
+    switch (player_plane.state)
+    {
+    case player_live:
+        playerLiveUpdate();
+        break;
+
+    case player_onDead:
+        playerOndeadUpdate();
+        break;
+
+    case player_dead:
+        playerDeadUpdate();
+        break;
+
+    default:
+        break;
+    }
+}
 
 boolean MovePlayer(SDL_Keycode key)
 {
@@ -74,7 +152,7 @@ boolean MovePlayer(SDL_Keycode key)
 
     if (key == SDLK_e)
     {
-        playerAddDamage(5);
+        player_plane.hp-=5;
         UpdateGui();
         return true;
     }

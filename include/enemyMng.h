@@ -1,45 +1,17 @@
+#define ENEMY_CONST_EXPLOSION_TIME 90.f
 
 
 #ifndef ENEMY_MNG
 #define ENEMY_MNG
 
-
 #include "global_variables.h"
-//#include "bulletMng.h"
+
 #include <stdlib.h>
 
-enum
-{
-    move,
-    attack,
-    dead
-};
-typedef unsigned char enemy_state;
-
-typedef struct
-{
-    float hp;
-    game_object *go;
-    enemy_state state;
-    float finishPointY;
-    float ExplosionTime;
-
-} type_enemy;
-
-float enemy_n;
-
-type_enemy *enemy;
-
-const float CONST_ExplosionTime = 90.f;
-
-float enemyVelocity = 0.08f;
+float enemyVelocity = 300.f;
 SDL_Texture *enemyPlane_texture[3];
 SDL_Texture *enemyExplosion_texture;
-SDL_Rect *explosionTexure_Rect[6];
-
-
-
-
+SDL_Rect *Enemy_explosionTexure_Rect[6];
 
 void enemyInit()
 {
@@ -49,7 +21,7 @@ void enemyInit()
 
     for (size_t i = 0; i < enemy_n; i++)
     {
-        explosionTexure_Rect[i] = create_rect(i * (192 / 6), 0, 192 / 6, 32);
+        Enemy_explosionTexure_Rect[i] = create_rect(i * (192 / 6), 0, 192 / 6, 32);
     }
 
     enemyPlane_texture[0] = create_texture("resources/assets/enemy/enemy1_strip3.png");
@@ -60,6 +32,7 @@ void enemyInit()
 
     for (size_t i = 0; i < enemy_n; i++)
     {
+        enemy[i].shootCount = RangedRandDemo(300,5000);
         enemy[i].hp = 100;
         SDL_Texture *tex = enemyPlane_texture[RangedRandDemo(0, 3)];
         SDL_Rect *texRect = create_rect(0, 0, 32, 32);
@@ -67,7 +40,7 @@ void enemyInit()
         enemy[i].go = create_gameObject(tex, texRect, targetRect);
         enemy[i].state = move;
         enemy[i].finishPointY = global_unitSize.y * RangedRandDemo(3, global_unitScreenHeight - 5);
-        enemy[i].ExplosionTime = CONST_ExplosionTime;
+        enemy[i].ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
     }
 }
 
@@ -85,12 +58,20 @@ void _moveUpdate(type_enemy *e)
         return;
     }
 
-    e->go->target_rect->y += enemyVelocity;
+    float a = enemyVelocity * STANDARD_VELOCITY;
+
+    e->go->target_rect->y += enemyVelocity * STANDARD_VELOCITY;
 }
 
 void _attackUpdate(type_enemy *e)
 {
- //   shoot_enemyBullet(e);
+    e->shootCount -= 0.3f;
+
+    if (e->shootCount <= 0)
+    {
+        shoot_enemyBullet(e);
+        e->shootCount = RangedRandDemo(300,5000);;
+    }
 
     if (e->hp <= 0)
     {
@@ -99,34 +80,34 @@ void _attackUpdate(type_enemy *e)
     }
 }
 
-void _SetFrameExplosion(type_enemy *e)
+void _SetFrameExplosion(game_object *go, float ExplosionTime, SDL_Rect *explosionTexure_Rect[])
 {
 
     int index = 0;
 
     boolean set = false;
 
-    if (e->ExplosionTime >= CONST_ExplosionTime * (0.83f) && !set)
+    if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.83f) && !set)
     {
         index = 0;
         set = true;
     }
-    if (e->ExplosionTime >= CONST_ExplosionTime * (0.66f) && !set)
+    if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.66f) && !set)
     {
         index = 1;
         set = true;
     }
-    if (e->ExplosionTime >= CONST_ExplosionTime * (0.50f) && !set)
+    if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.50f) && !set)
     {
         index = 2;
         set = true;
     }
-    if (e->ExplosionTime >= CONST_ExplosionTime * (0.33f) && !set)
+    if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.33f) && !set)
     {
         index = 3;
         set = true;
     }
-    if (e->ExplosionTime >= CONST_ExplosionTime * (0.16f) && !set)
+    if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.16f) && !set)
     {
         index = 4;
         set = true;
@@ -137,10 +118,10 @@ void _SetFrameExplosion(type_enemy *e)
         index = 5;
     }
 
-    e->go->texture_rect->h = explosionTexure_Rect[index]->h;
-    e->go->texture_rect->w = explosionTexure_Rect[index]->w;
-    e->go->texture_rect->x = explosionTexure_Rect[index]->x;
-    e->go->texture_rect->y = explosionTexure_Rect[index]->y;
+    go->texture_rect->h = explosionTexure_Rect[index]->h;
+    go->texture_rect->w = explosionTexure_Rect[index]->w;
+    go->texture_rect->x = explosionTexure_Rect[index]->x;
+    go->texture_rect->y = explosionTexure_Rect[index]->y;
     return;
 }
 
@@ -157,7 +138,7 @@ void _deadUpdate(type_enemy *e)
         e->go->texture = enemyPlane_texture[RangedRandDemo(0, 3)];
         e->state = move;
         e->finishPointY = global_unitSize.y * RangedRandDemo(3, global_unitScreenHeight - 5);
-        e->ExplosionTime = CONST_ExplosionTime;
+        e->ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
 
         return;
     }
@@ -183,6 +164,11 @@ void enemyUpdate()
         default:
             break;
         }
+
+        if (enemy[i].go->target_rect->y >= SCREEN_HEIGHT)
+        {
+            enemy[i].state = dead;
+        }
     }
 }
 
@@ -193,7 +179,5 @@ void renderEnemy()
         renderGameObject(enemy[i].go);
     }
 }
-
-
 
 #endif
