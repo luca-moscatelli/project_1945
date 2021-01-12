@@ -6,7 +6,8 @@
     SCREEN_HEIGHT * 0.25f
 #define PLAYER_LIMIT_DOWN \
     SCREEN_HEIGHT - gui->target_rect->h - player_plane.go->target_rect->h
-#define PLAYER_RATIO_TIME 3.f
+#define PLAYER_RATIO_TIME 5.f
+#define PLAYER_POWER_UP_RATIO_TIME 3.f
 #define PLAYER_RESPAWN_TIME 150.f
 
 #ifndef PLAYER_MNG
@@ -41,7 +42,7 @@ void playerInit()
     player_explosion_texture = create_texture("resources/assets/player/explosion2_strip7.png");
 }
 
-void playerLiveUpdate()
+void PlayerLive_Update()
 {
     player_ratioCont -= 0.01;
 
@@ -53,7 +54,7 @@ void playerLiveUpdate()
     }
 }
 
-void playerOndeadUpdate()
+void PlayerOndead_Update()
 {
     player_plane.ExplosionTime -= 0.05f;
 
@@ -63,7 +64,7 @@ void playerOndeadUpdate()
     }
 }
 
-void playerDeadUpdate()
+void PlayerDead_Update()
 {
     player_plane.respawn_time -= 0.03f;
 
@@ -97,15 +98,15 @@ void UpdatePlayer()
     switch (player_plane.state)
     {
     case player_live:
-        playerLiveUpdate();
+        PlayerLive_Update();
         break;
 
     case player_onDead:
-        playerOndeadUpdate();
+        PlayerOndead_Update();
         break;
 
     case player_dead:
-        playerDeadUpdate();
+        PlayerDead_Update();
         break;
 
     default:
@@ -115,6 +116,7 @@ void UpdatePlayer()
 
 boolean MovePlayer(SDL_Keycode key)
 {
+    if(player_plane.state!=player_live) return false;
 
     if (key == SDLK_LEFT)
     {

@@ -5,6 +5,7 @@
 #define ENEMY_MNG
 
 #include "global_variables.h"
+#include "bulletMng.h"
 
 #include <stdlib.h>
 
@@ -12,6 +13,7 @@ float enemyVelocity = 300.f;
 SDL_Texture *enemyPlane_texture[3];
 SDL_Texture *enemyExplosion_texture;
 SDL_Rect *Enemy_explosionTexure_Rect[6];
+Mix_Chunk *enemy_explosion_sound;
 
 void enemyInit()
 {
@@ -29,6 +31,8 @@ void enemyInit()
     enemyPlane_texture[2] = create_texture("resources/assets/enemy/enemy3_strip3.png");
 
     enemyExplosion_texture = create_texture("resources/assets/enemy/explosion1_strip6.png");
+
+    enemy_explosion_sound=Mix_LoadWAV("resources/assets/audio/snd_explosion2.wav");
 
     for (size_t i = 0; i < enemy_n; i++)
     {
@@ -75,6 +79,7 @@ void _attackUpdate(type_enemy *e)
 
     if (e->hp <= 0)
     {
+        Mix_PlayChannel(-1,enemy_explosion_sound,0);
         e->go->texture = enemyExplosion_texture;
         e->state = dead;
     }

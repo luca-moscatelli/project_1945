@@ -110,16 +110,7 @@ float enemy_n;
 
 type_enemy *enemy;
 
-typedef struct
-{
-    boolean free;
-    game_object *go;
 
-} type_bullet;
-
-type_bullet *player_bullet;
-
-type_bullet *enemy_bullet;
 
 
 
@@ -231,20 +222,6 @@ boolean check_collision(SDL_FRect a, SDL_FRect b)
         return false;
     }
     return true;
-}
-
-void shoot_enemyBullet(type_enemy *e)
-{
-    for (size_t i = 0; i < 30; i++)
-    {
-        if (enemy_bullet[i].free)
-        {
-            enemy_bullet[i].go->target_rect->x = e->go->target_rect->x + e->go->target_rect->w * 0.16f + enemy_bullet[i].go->target_rect->w * 0.5f;
-            enemy_bullet[i].go->target_rect->y = e->go->target_rect->y + 30;
-            enemy_bullet[i].free = false;
-            return;
-        }
-    }
 }
 
 

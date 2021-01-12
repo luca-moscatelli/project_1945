@@ -677,6 +677,8 @@ GuiMng.h
 ../include/enemyMng.h
 global_variables.h
 ../include/global_variables.h
+bulletMng.h
+../include/bulletMng.h
 stdlib.h
 -
 
