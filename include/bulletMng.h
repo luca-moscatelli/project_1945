@@ -1,5 +1,6 @@
 #define PLAYER_BULLET_N 30
 #define ENEMY_BULLET_N 30
+#define BULLET_ENEMY_VELOCITY 200.f
 
 #ifndef BULLET_MNG
 #define BULLET_MNG
@@ -95,7 +96,7 @@ void _updatePlayerBullet()
     {
         if (!player_bullet[i].free)
         {
-            for (size_t j = 0; j < enemy_n; j++)
+            for (size_t j = 0; j < ENEMY_N; j++)
             {
                 if (check_collision(*((player_bullet[i]).go)->target_rect, *((enemy[j].go)->target_rect)))
                 {
@@ -162,7 +163,7 @@ void _updateEnemyBullet()
                 return;
             }
 
-            enemy_bullet[i].go->target_rect->y += 0.05;
+            enemy_bullet[i].go->target_rect->y += BULLET_ENEMY_VELOCITY*STANDARD_VELOCITY;
 
             if (enemy_bullet[i].go->target_rect->y >= SCREEN_HEIGHT)
             {

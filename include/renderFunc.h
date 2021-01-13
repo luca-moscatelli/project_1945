@@ -111,7 +111,7 @@ int _renderPlane()
         _SetFrameExplosion(player_plane.go, player_plane.ExplosionTime, Player_explosionTexure_Rect);
     }
 
-    for (size_t i = 0; i < enemy_n; i++)
+    for (size_t i = 0; i <  ENEMY_N; i++)
     {
         if (enemy[i].state == dead)
         {

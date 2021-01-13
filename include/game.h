@@ -60,10 +60,17 @@ void _input()
             break;
         case SDL_KEYDOWN:
 
-            if (MovePlayer(event.key.keysym.sym))
-                break;
+            if (player_plane.state == player_live)
+            {
 
-            if (ShootPlayer(event.key.keysym.sym))
+                if (MovePlayer(event.key.keysym.sym))
+                    break;
+
+                if (ShootPlayer(event.key.keysym.sym))
+                    break;
+            }
+
+            if (exit_game(event.key.keysym.sym))
                 break;
 
             break;
@@ -89,13 +96,12 @@ int init()
 
     Mix_PlayMusic(background_music, -1);
 
-  //  Mix_Volume(-1, 0);
+    //  Mix_Volume(-1, 0);
 
-  unit_size_norm=  (float)SCREEN_HEIGHT/480.f;
+    unit_size_norm = (float)SCREEN_HEIGHT / 480.f;
 
-    global_unitSize.x=40*unit_size_norm;
-    global_unitSize.y=40*unit_size_norm;
-
+    global_unitSize.x = 40 * unit_size_norm;
+    global_unitSize.y = 40 * unit_size_norm;
 
     global_unitScreenWidth = SCREEN_WIDTH / global_unitSize.x;
     global_unitScreenHeight = SCREEN_HEIGHT / global_unitSize.y;

@@ -14,7 +14,6 @@
 #define PLAYER_MNG
 
 #include "global_variables.h"
-#include <SDL_image.h>
 
 float player_ratioCont;
 
@@ -24,7 +23,7 @@ SDL_Rect *texRect_plane;
 void playerInit()
 {
     texture_plane = create_texture("resources/assets/player/myplane_strip3.png");
-    texRect_plane = create_rect(0, 0, 195 / 3, 65);
+    texRect_plane = create_rect(0, 0, 65, 65);
     SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f - global_unitSize.x * 0.5f, SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
 
     for (size_t i = 0; i < 7; i++)
@@ -116,7 +115,6 @@ void UpdatePlayer()
 
 boolean MovePlayer(SDL_Keycode key)
 {
-    if(player_plane.state!=player_live) return false;
 
     if (key == SDLK_LEFT)
     {
@@ -154,11 +152,23 @@ boolean MovePlayer(SDL_Keycode key)
 
     if (key == SDLK_e)
     {
-        player_plane.hp-=5;
+        player_plane.hp -= 5;
         UpdateGui();
         return true;
     }
 
+    if (key == SDLK_t)
+    {
+        player_plane.life++;
+        UpdateGui();
+        return true;
+    }
+
+    return false;
+}
+
+boolean exit_game(SDL_KeyCode key)
+{
     if (key == SDLK_ESCAPE)
     {
         done = true;
@@ -170,6 +180,7 @@ boolean MovePlayer(SDL_Keycode key)
 
 boolean ShootPlayer(SDL_KeyCode key)
 {
+
     if (key == SDLK_SPACE && player_ratioCont <= 0)
     {
 

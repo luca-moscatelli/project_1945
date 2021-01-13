@@ -1,27 +1,42 @@
 #define ENEMY_CONST_EXPLOSION_TIME 90.f
-
+#define ENEMY_N 6
 
 #ifndef ENEMY_MNG
 #define ENEMY_MNG
 
 #include "global_variables.h"
-#include "bulletMng.h"
 
 #include <stdlib.h>
+
+typedef struct
+{
+    float hp;
+    game_object *go;
+    enemy_state state;
+    float finishPointY;
+    float ExplosionTime;
+    float shootCount;
+
+} type_enemy;
+
+type_enemy *enemy;
+
+
+
+#include "bulletMng.h"
 
 float enemyVelocity = 300.f;
 SDL_Texture *enemyPlane_texture[3];
 SDL_Texture *enemyExplosion_texture;
 SDL_Rect *Enemy_explosionTexure_Rect[6];
+boolean *column;
 Mix_Chunk *enemy_explosion_sound;
 
 void enemyInit()
 {
-    enemy_n = 6;
+    enemy = (type_enemy *)malloc(sizeof(type_enemy) * ENEMY_N);
 
-    enemy = (type_enemy *)malloc(sizeof(type_enemy) * enemy_n);
-
-    for (size_t i = 0; i < enemy_n; i++)
+    for (size_t i = 0; i < ENEMY_N; i++)
     {
         Enemy_explosionTexure_Rect[i] = create_rect(i * (192 / 6), 0, 192 / 6, 32);
     }
@@ -32,11 +47,11 @@ void enemyInit()
 
     enemyExplosion_texture = create_texture("resources/assets/enemy/explosion1_strip6.png");
 
-    enemy_explosion_sound=Mix_LoadWAV("resources/assets/audio/snd_explosion2.wav");
+    enemy_explosion_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion2.wav");
 
-    for (size_t i = 0; i < enemy_n; i++)
+    for (size_t i = 0; i < ENEMY_N; i++)
     {
-        enemy[i].shootCount = RangedRandDemo(300,5000);
+        enemy[i].shootCount = RangedRandDemo(300, 5000);
         enemy[i].hp = 100;
         SDL_Texture *tex = enemyPlane_texture[RangedRandDemo(0, 3)];
         SDL_Rect *texRect = create_rect(0, 0, 32, 32);
@@ -74,12 +89,13 @@ void _attackUpdate(type_enemy *e)
     if (e->shootCount <= 0)
     {
         shoot_enemyBullet(e);
-        e->shootCount = RangedRandDemo(300,5000);;
+        e->shootCount = RangedRandDemo(300, 5000);
+        ;
     }
 
     if (e->hp <= 0)
     {
-        Mix_PlayChannel(-1,enemy_explosion_sound,0);
+        Mix_PlayChannel(-1, enemy_explosion_sound, 0);
         e->go->texture = enemyExplosion_texture;
         e->state = dead;
     }
@@ -153,7 +169,7 @@ void _deadUpdate(type_enemy *e)
 
 void enemyUpdate()
 {
-    for (size_t i = 0; i < enemy_n; i++)
+    for (size_t i = 0; i < ENEMY_N; i++)
     {
         switch (enemy[i].state)
         {
@@ -179,7 +195,7 @@ void enemyUpdate()
 
 void renderEnemy()
 {
-    for (size_t i = 0; i < enemy_n; i++)
+    for (size_t i = 0; i < ENEMY_N; i++)
     {
         renderGameObject(enemy[i].go);
     }

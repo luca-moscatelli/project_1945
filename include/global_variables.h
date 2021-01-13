@@ -95,20 +95,9 @@ Mix_Music *background_music;
 SDL_Texture *player_explosion_texture;
 SDL_Rect *Player_explosionTexure_Rect[7];
 
-typedef struct
-{
-    float hp;
-    game_object *go;
-    enemy_state state;
-    float finishPointY;
-    float ExplosionTime;
-    float shootCount;
 
-} type_enemy;
 
-float enemy_n;
 
-type_enemy *enemy;
 
 
 
@@ -157,7 +146,7 @@ SDL_FRect *create_Frect(float x, float y, float w, float h)
     return rect;
 }
 
-game_object *create_gameObject(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect)
+game_object *create_gameObject(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect) 
 {
 
     game_object *go = (game_object *)malloc(sizeof(game_object));
