@@ -707,6 +707,8 @@ GuiMng.h
 ../include/GuiMng.h
 playerMng.h
 ../include/playerMng.h
+powerUp_Mng.h
+../include/powerUp_Mng.h
 
 ../include/global_variables.h
 SDL_image.h
@@ -718,6 +720,12 @@ SDL_mixer.h
 global_variables.h
 ../include/global_variables.h
 
+../include/powerUp_Mng.h
+global_variables.h
+../include/global_variables.h
+stdlib.h
+-
+
 ../include/renderFunc.h
 global_variables.h
 ../include/global_variables.h
@@ -727,6 +735,8 @@ bulletMng.h
 ../include/bulletMng.h
 GuiMng.h
 ../include/GuiMng.h
+powerUp_Mng.h
+../include/powerUp_Mng.h
 
 ../include/updateObj.h
 global_variables.h
@@ -739,6 +749,8 @@ stdlib.h
 -
 enemyMng.h
 ../include/enemyMng.h
+powerUp_Mng.h
+../include/powerUp_Mng.h
 
 C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/main.c
 game.h

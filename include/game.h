@@ -13,6 +13,7 @@
 #include "enemyMng.h"
 #include "GuiMng.h"
 #include "playerMng.h"
+#include "powerUp_Mng.h"
 
 void _initGameAsset()
 {
@@ -46,6 +47,7 @@ void _initGameAsset()
     bulletInit();
     GuiInit();
     enemyInit();
+    powerUp_init();
 }
 
 void _input()
@@ -96,7 +98,7 @@ int init()
 
     Mix_PlayMusic(background_music, -1);
 
-    //  Mix_Volume(-1, 0);
+    Mix_Volume(-1, 0);
 
     unit_size_norm = (float)SCREEN_HEIGHT / 480.f;
 

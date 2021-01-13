@@ -7,6 +7,7 @@
 #include "playerMng.h"
 #include <stdlib.h>
 #include "enemyMng.h"
+#include "powerUp_Mng.h"
 
 
 
@@ -57,6 +58,9 @@ void update()
     _updateSea();
 
     UpdatePlayer();
+
+    PowerUp_update();
+
 }
 
 #endif

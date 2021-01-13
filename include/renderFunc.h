@@ -7,6 +7,7 @@
 #include "enemyMng.h"
 #include "bulletMng.h"
 #include "GuiMng.h"
+#include "powerUp_Mng.h"
 
 Uint32 plane_frame_n = 0;
 
@@ -151,6 +152,7 @@ int renderScene()
     _renderPlane();                                                   //3
     renderEnemy();
     renderBullet();
+  //  Render_powerUp();
     RenderGui();
     return 0;
 }

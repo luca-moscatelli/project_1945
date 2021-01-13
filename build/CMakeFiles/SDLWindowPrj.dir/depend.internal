@@ -57,6 +57,7 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.obj
  ../include/game.h
  ../include/global_variables.h
  ../include/playerMng.h
+ ../include/powerUp_Mng.h
  ../include/renderFunc.h
  ../include/updateObj.h
  C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/main.c

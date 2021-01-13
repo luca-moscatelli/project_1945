@@ -56,6 +56,7 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/enemyMng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/game.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/global_variables.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/playerMng.h
+CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/powerUp_Mng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/renderFunc.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/updateObj.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../src/main.c
