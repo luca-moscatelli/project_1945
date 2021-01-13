@@ -11,6 +11,8 @@
 #include "enemyMng.h"
 #include "GuiMng.h"
 
+float a;
+
 float player_bullet_damage = 20;
 float enemy_bullet_damage = 10;
 float player_bullet_velocity = 150.f;
@@ -29,7 +31,6 @@ type_bullet *enemy_bullet;
 
 void bulletInit()
 {
-
     //init vector bullet player-------
     player_bullet = (type_bullet *)malloc(sizeof(type_bullet) * PLAYER_BULLET_N);
     SDL_Texture *tex = create_texture("resources/assets/player/bullet.png");

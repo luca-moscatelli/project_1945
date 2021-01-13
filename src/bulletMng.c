@@ -3,12 +3,11 @@
 // #include "C:\Users\39348\Documents\progetti_c\sdl-blank-prj\include\bulletMng.h"
 // //#include "global_variables.h"
 // #include "SDL.h"
-//#include "enemyMng.h"
+#include "bulletMng.h"
 
 
-int greve(int a,int b){
-    return 3;
-}
+
+
 
 // type_bullet *player_bullet;
 

@@ -709,6 +709,8 @@ playerMng.h
 ../include/playerMng.h
 powerUp_Mng.h
 ../include/powerUp_Mng.h
+stdio.h
+-
 
 ../include/global_variables.h
 SDL_image.h

@@ -14,6 +14,7 @@
 #include "GuiMng.h"
 #include "playerMng.h"
 #include "powerUp_Mng.h"
+#include <stdio.h>
 
 void _initGameAsset()
 {
@@ -129,8 +130,8 @@ int init()
         return 2;
     }
 
-    Uint64 curr_count = SDL_GetPerformanceCounter();
-    Uint64 last_count = curr_count;
+    curr_count = SDL_GetPerformanceCounter();
+    last_count = curr_count;
 
     update_time = 0.f;
     time_counter = 0.f;
