@@ -5,8 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/cmake/sdl2/include",
-                "${workspaceFolder}/cmake/sdl2/include",
-                "${workspaceFolder}"
+                "${workspaceFolder}",
+                "${workspaceFolder}/include"
+
             ],
             "defines": [
                 "_DEBUG",

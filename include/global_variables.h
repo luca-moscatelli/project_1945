@@ -10,21 +10,8 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 
-enum
-{
-    move,
-    attack,
-    dead
-};
-typedef unsigned char enemy_state;
 
-enum
-{
-    player_live,
-    player_onDead,
-    player_dead
-};
-typedef unsigned char player_state;
+
 
 enum boolean_enum
 {
@@ -44,20 +31,10 @@ typedef struct
     SDL_Texture *texture;
     SDL_Rect *texture_rect;
     SDL_FRect *target_rect;
+    SDL_FRect *collider_rect;
 } game_object;
 
-typedef struct
-{
-    game_object *go;
-    int finishPointY;
-    float ExplosionTime;
-    float hp;
-    float explosion_time;
-    float respawn_time;
-    player_state state;
-    uint32_t life;
 
-} type_player;
 
 typedef struct
 {
@@ -108,7 +85,6 @@ SDL_Rect *Player_explosionTexure_Rect[7];
 game_object island[3];
 game_object water;
 
-type_player player_plane;
 
 
 
@@ -153,6 +129,7 @@ game_object *create_gameObject(SDL_Texture *texture, SDL_Rect *texture_rect, SDL
     go->texture = texture;
     go->texture_rect = texture_rect;
     go->target_rect = target_rect;
+    go->collider_rect=NULL;
 
     return go;
 }

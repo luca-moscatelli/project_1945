@@ -10,18 +10,18 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-The C compiler identification is Clang, found in "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/3.19.2/CompilerIdC/a.exe"
+The C compiler identification is Clang, found in "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/3.19.2/CompilerIdC/a.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/PROGRA~2/GnuWin32/bin/make.exe cmTC_c8386/fast && C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_c8386.dir/build.make CMakeFiles/cmTC_c8386.dir/build
-make.exe[1]: Entering directory `C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c8386.dir/CMakeCCompilerABI.c.obj
-"D:/Program Files/LLVM/bin/clang.exe"   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/cmTC_c8386.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCCompilerABI.c"
-Linking C executable cmTC_c8386.exe
-"D:/Program Files/LLVM/bin/clang.exe" -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd @CMakeFiles/cmTC_c8386.dir/objects1.rsp -o cmTC_c8386.exe -Xlinker /implib:cmTC_c8386.lib -Xlinker /pdb:C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/CMakeTmp/cmTC_c8386.pdb -Xlinker /version:0.0  
-make.exe[1]: Leaving directory `C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):C:/PROGRA~2/GnuWin32/bin/make.exe cmTC_064dd/fast && C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_064dd.dir/build.make CMakeFiles/cmTC_064dd.dir/build
+make.exe[1]: Entering directory `C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_064dd.dir/CMakeCCompilerABI.c.obj
+"D:/Program Files/LLVM/bin/clang.exe"   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/cmTC_064dd.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCCompilerABI.c"
+Linking C executable cmTC_064dd.exe
+"D:/Program Files/LLVM/bin/clang.exe" -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd @CMakeFiles/cmTC_064dd.dir/objects1.rsp -o cmTC_064dd.exe -Xlinker /implib:cmTC_064dd.lib -Xlinker /pdb:C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp/cmTC_064dd.pdb -Xlinker /version:0.0  
+make.exe[1]: Leaving directory `C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp'
 
 
 

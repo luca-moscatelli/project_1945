@@ -51,10 +51,12 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../cmake/sdl2_image/include/SDL_imag
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../cmake/sdl2_mixer/include/SDL_mixer.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../cmake/sdl2_ttf/include/SDL_ttf.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/GuiMng.h
+CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/bullet.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/bulletMng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/enemyMng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/game.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/global_variables.h
+CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/player.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/playerMng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/powerUp_Mng.h
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../include/renderFunc.h

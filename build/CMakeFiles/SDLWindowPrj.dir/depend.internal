@@ -52,12 +52,14 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.obj
  ../cmake/sdl2_mixer/include/SDL_mixer.h
  ../cmake/sdl2_ttf/include/SDL_ttf.h
  ../include/GuiMng.h
+ ../include/bullet.h
  ../include/bulletMng.h
  ../include/enemyMng.h
  ../include/game.h
  ../include/global_variables.h
+ ../include/player.h
  ../include/playerMng.h
  ../include/powerUp_Mng.h
  ../include/renderFunc.h
  ../include/updateObj.h
- C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/main.c
+ C:/Users/39348/Documents/progetti_c/1945-project/src/main.c

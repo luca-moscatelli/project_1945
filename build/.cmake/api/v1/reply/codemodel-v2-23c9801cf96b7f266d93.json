@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SDLWindowPrj::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SDLWindowPrj-Debug-ae0b664bb18a9e39a4a8.json",
+					"jsonFile" : "target-SDLWindowPrj-Debug-c3e630f78f6b021838dc.json",
 					"name" : "SDLWindowPrj",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build",
-		"source" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj"
+		"build" : "C:/Users/39348/Documents/progetti_c/1945-project/build",
+		"source" : "C:/Users/39348/Documents/progetti_c/1945-project"
 	},
 	"version" : 
 	{

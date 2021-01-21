@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/main.c" "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/main.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

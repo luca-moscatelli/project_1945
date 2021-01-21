@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/build"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -907,7 +907,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/cmake/"
 		},
 		{
 			"name" : "CMAKE_NM",
@@ -1403,7 +1403,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/lib/x64/SDL2.lib][C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/include][v()]"
+			"value" : "[C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/lib/x64/SDL2.lib][C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/include][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_SDL2TTF",
@@ -1415,7 +1415,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib][C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/include][v()]"
+			"value" : "[C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib][C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/include][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_SDL2_IMAGE",
@@ -1427,7 +1427,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_image/lib/x64/SDL2_image.lib][C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_image/include][v..()]"
+			"value" : "[C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/lib/x64/SDL2_image.lib][C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/include][v..()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_SDL2_MIXER",
@@ -1439,7 +1439,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_mixer/lib/x64/SDL2_mixer.lib][C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_mixer/include][v()]"
+			"value" : "[C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_mixer/lib/x64/SDL2_mixer.lib][C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_mixer/include][v()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1487,7 +1487,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/include"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/include"
 		},
 		{
 			"name" : "SDL2TTF_LIBRARY",
@@ -1499,7 +1499,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib"
 		},
 		{
 			"name" : "SDL2TTF_LIBRARY_TEMP",
@@ -1511,7 +1511,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib"
 		},
 		{
 			"name" : "SDL2_IMAGE_INCLUDE_DIR",
@@ -1527,7 +1527,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_image/include"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/include"
 		},
 		{
 			"name" : "SDL2_IMAGE_LIBRARY",
@@ -1543,7 +1543,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_image/lib/x64/SDL2_image.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/lib/x64/SDL2_image.lib"
 		},
 		{
 			"name" : "SDL2_IMAGE_PATH",
@@ -1555,7 +1555,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_image/"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/"
 		},
 		{
 			"name" : "SDL2_INCLUDE_DIR",
@@ -1567,7 +1567,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/include"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/include"
 		},
 		{
 			"name" : "SDL2_LIBRARY",
@@ -1579,7 +1579,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/lib/x64/SDL2.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/lib/x64/SDL2.lib"
 		},
 		{
 			"name" : "SDL2_LIBRARY_TEMP",
@@ -1591,7 +1591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/lib/x64/SDL2.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/lib/x64/SDL2.lib"
 		},
 		{
 			"name" : "SDL2_MIXER_INCLUDE_DIR",
@@ -1607,7 +1607,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_mixer/include"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_mixer/include"
 		},
 		{
 			"name" : "SDL2_MIXER_LIBRARY",
@@ -1623,7 +1623,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_mixer/lib/x64/SDL2_mixer.lib"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_mixer/lib/x64/SDL2_mixer.lib"
 		},
 		{
 			"name" : "SDL2_MIXER_PATH",
@@ -1635,7 +1635,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_mixer/"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_mixer/"
 		},
 		{
 			"name" : "SDL2_PATH",
@@ -1647,7 +1647,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2/"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/"
 		},
 		{
 			"name" : "SDL2_TTF_PATH",
@@ -1659,7 +1659,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "c:/Users/39348/Documents/progetti_c/sdl-blank-prj/cmake/sdl2_ttf/"
+			"value" : "c:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_ttf/"
 		},
 		{
 			"name" : "SDLWindowPrj_BINARY_DIR",
@@ -1671,7 +1671,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project/build"
 		},
 		{
 			"name" : "SDLWindowPrj_SOURCE_DIR",
@@ -1683,7 +1683,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/39348/Documents/progetti_c/sdl-blank-prj"
+			"value" : "C:/Users/39348/Documents/progetti_c/1945-project"
 		},
 		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",

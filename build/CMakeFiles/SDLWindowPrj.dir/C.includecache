@@ -661,26 +661,22 @@ global_variables.h
 ../include/global_variables.h
 stdlib.h
 -
+guiMng.c
+../include/guiMng.c
 
-../include/bulletMng.h
+../include/bullet.h
 global_variables.h
 ../include/global_variables.h
-SDL_image.h
--
-SDL_mixer.h
--
-enemyMng.h
-../include/enemyMng.h
-GuiMng.h
-../include/GuiMng.h
+
+../include/bulletMng.h
+bullet.h
+../include/bullet.h
+bulletMng.c
+../include/bulletMng.c
 
 ../include/enemyMng.h
-global_variables.h
-../include/global_variables.h
-stdlib.h
--
-bulletMng.h
-../include/bulletMng.h
+enemyMng.c
+../include/enemyMng.c
 
 ../include/game.h
 SDL.h
@@ -718,9 +714,13 @@ SDL_image.h
 SDL_mixer.h
 -
 
-../include/playerMng.h
+../include/player.h
 global_variables.h
 ../include/global_variables.h
+
+../include/playerMng.h
+playerMng.c
+../include/playerMng.c
 
 ../include/powerUp_Mng.h
 global_variables.h
@@ -739,6 +739,8 @@ GuiMng.h
 ../include/GuiMng.h
 powerUp_Mng.h
 ../include/powerUp_Mng.h
+player.h
+../include/player.h
 
 ../include/updateObj.h
 global_variables.h
@@ -754,7 +756,7 @@ enemyMng.h
 powerUp_Mng.h
 ../include/powerUp_Mng.h
 
-C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/main.c
+C:/Users/39348/Documents/progetti_c/1945-project/src/main.c
 game.h
-C:/Users/39348/Documents/progetti_c/sdl-blank-prj/src/game.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/game.h
 

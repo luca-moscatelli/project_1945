@@ -51,6 +51,17 @@ void _initGameAsset()
     powerUp_init();
 }
 
+boolean __exit_game(SDL_KeyCode key)
+{
+    if (key == SDLK_ESCAPE)
+    {
+        done = true;
+        return true;
+    }
+
+    return false;
+}
+
 void _input()
 {
     SDL_Event event;
@@ -73,7 +84,7 @@ void _input()
                     break;
             }
 
-            if (exit_game(event.key.keysym.sym))
+            if (__exit_game(event.key.keysym.sym))
                 break;
 
             break;
@@ -99,7 +110,7 @@ int init()
 
     Mix_PlayMusic(background_music, -1);
 
-    Mix_Volume(-1, 0);
+  //  Mix_Volume(-1, 0);
 
     unit_size_norm = (float)SCREEN_HEIGHT / 480.f;
 

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/39348/Documents/progetti_c/sdl-blank-prj
+# Install script for directory: C:/Users/39348/Documents/progetti_c/1945-project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/39348/Documents/progetti_c/sdl-blank-prj/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/39348/Documents/progetti_c/1945-project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

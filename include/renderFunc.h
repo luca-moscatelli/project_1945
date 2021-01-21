@@ -8,6 +8,7 @@
 #include "bulletMng.h"
 #include "GuiMng.h"
 #include "powerUp_Mng.h"
+#include "player.h"
 
 Uint32 plane_frame_n = 0;
 
