@@ -1,11 +1,9 @@
 
-#include <math.h>
 
-typedef struct
-{
-    float x;
-    float y;
-} vec2;
+
+
+#include "vec2.h"
+
 
 vec2 vec2_new(float x, float y)
 {

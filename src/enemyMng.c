@@ -2,20 +2,21 @@
 
 #include "global_variables.h"
 #include "enemy.h"
-#include <stdlib.h>
-
+// #include <stdlib.h>
+#include "enemyMng.h"
+// #include "bulletMng.h"
 
 
 float enemyVelocity = 300.f;
 SDL_Texture *enemyPlane_texture[3];
 SDL_Texture *enemyExplosion_texture;
-SDL_Rect *Enemy_explosionTexure_Rect[6];
+//SDL_Rect *Enemy_explosionTexure_Rect[6];
 boolean *column;
 Mix_Chunk *enemy_explosion_sound;
 
 
 
-#include "bulletMng.h"
+
 
 
 
@@ -40,7 +41,7 @@ void enemyInit()
 
     for (size_t i = 0; i < ENEMY_N; i++)
     {
-        enemy[i].shootCount = RangedRandDemo(300, 5000);
+        enemy[i].shootCount = RangedRandDemo(3, 5);
         enemy[i].hp = 100;
         SDL_Texture *tex = enemyPlane_texture[RangedRandDemo(0, 3)];
         SDL_Rect *texRect = create_rect(0, 0, 32, 32);
@@ -79,7 +80,7 @@ void _attackUpdate(type_enemy *e)
     {
         shoot_enemyBullet(e);
         e->shootCount = RangedRandDemo(300, 5000);
-        ;
+        
     }
 
     if (e->hp <= 0)

@@ -142,6 +142,141 @@ SDLWindowPrj/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/build
 .PHONY : SDLWindowPrj/fast
 
+src/GuiMng.obj: src/GuiMng.c.obj
+
+.PHONY : src/GuiMng.obj
+
+# target to build an object file
+src/GuiMng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj
+.PHONY : src/GuiMng.c.obj
+
+src/GuiMng.i: src/GuiMng.c.i
+
+.PHONY : src/GuiMng.i
+
+# target to preprocess a source file
+src/GuiMng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.i
+.PHONY : src/GuiMng.c.i
+
+src/GuiMng.s: src/GuiMng.c.s
+
+.PHONY : src/GuiMng.s
+
+# target to generate assembly for a file
+src/GuiMng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.s
+.PHONY : src/GuiMng.c.s
+
+src/aiv-list.obj: src/aiv-list.c.obj
+
+.PHONY : src/aiv-list.obj
+
+# target to build an object file
+src/aiv-list.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj
+.PHONY : src/aiv-list.c.obj
+
+src/aiv-list.i: src/aiv-list.c.i
+
+.PHONY : src/aiv-list.i
+
+# target to preprocess a source file
+src/aiv-list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.i
+.PHONY : src/aiv-list.c.i
+
+src/aiv-list.s: src/aiv-list.c.s
+
+.PHONY : src/aiv-list.s
+
+# target to generate assembly for a file
+src/aiv-list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.s
+.PHONY : src/aiv-list.c.s
+
+src/bulletMng.obj: src/bulletMng.c.obj
+
+.PHONY : src/bulletMng.obj
+
+# target to build an object file
+src/bulletMng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj
+.PHONY : src/bulletMng.c.obj
+
+src/bulletMng.i: src/bulletMng.c.i
+
+.PHONY : src/bulletMng.i
+
+# target to preprocess a source file
+src/bulletMng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.i
+.PHONY : src/bulletMng.c.i
+
+src/bulletMng.s: src/bulletMng.c.s
+
+.PHONY : src/bulletMng.s
+
+# target to generate assembly for a file
+src/bulletMng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.s
+.PHONY : src/bulletMng.c.s
+
+src/enemyMng.obj: src/enemyMng.c.obj
+
+.PHONY : src/enemyMng.obj
+
+# target to build an object file
+src/enemyMng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj
+.PHONY : src/enemyMng.c.obj
+
+src/enemyMng.i: src/enemyMng.c.i
+
+.PHONY : src/enemyMng.i
+
+# target to preprocess a source file
+src/enemyMng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.i
+.PHONY : src/enemyMng.c.i
+
+src/enemyMng.s: src/enemyMng.c.s
+
+.PHONY : src/enemyMng.s
+
+# target to generate assembly for a file
+src/enemyMng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.s
+.PHONY : src/enemyMng.c.s
+
+src/global_variables.obj: src/global_variables.c.obj
+
+.PHONY : src/global_variables.obj
+
+# target to build an object file
+src/global_variables.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj
+.PHONY : src/global_variables.c.obj
+
+src/global_variables.i: src/global_variables.c.i
+
+.PHONY : src/global_variables.i
+
+# target to preprocess a source file
+src/global_variables.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.i
+.PHONY : src/global_variables.c.i
+
+src/global_variables.s: src/global_variables.c.s
+
+.PHONY : src/global_variables.s
+
+# target to generate assembly for a file
+src/global_variables.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.s
+.PHONY : src/global_variables.c.s
+
 src/main.obj: src/main.c.obj
 
 .PHONY : src/main.obj
@@ -169,6 +304,114 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/physicsMng.obj: src/physicsMng.c.obj
+
+.PHONY : src/physicsMng.obj
+
+# target to build an object file
+src/physicsMng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj
+.PHONY : src/physicsMng.c.obj
+
+src/physicsMng.i: src/physicsMng.c.i
+
+.PHONY : src/physicsMng.i
+
+# target to preprocess a source file
+src/physicsMng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.i
+.PHONY : src/physicsMng.c.i
+
+src/physicsMng.s: src/physicsMng.c.s
+
+.PHONY : src/physicsMng.s
+
+# target to generate assembly for a file
+src/physicsMng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.s
+.PHONY : src/physicsMng.c.s
+
+src/playerMng.obj: src/playerMng.c.obj
+
+.PHONY : src/playerMng.obj
+
+# target to build an object file
+src/playerMng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj
+.PHONY : src/playerMng.c.obj
+
+src/playerMng.i: src/playerMng.c.i
+
+.PHONY : src/playerMng.i
+
+# target to preprocess a source file
+src/playerMng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.i
+.PHONY : src/playerMng.c.i
+
+src/playerMng.s: src/playerMng.c.s
+
+.PHONY : src/playerMng.s
+
+# target to generate assembly for a file
+src/playerMng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.s
+.PHONY : src/playerMng.c.s
+
+src/updateObj.obj: src/updateObj.c.obj
+
+.PHONY : src/updateObj.obj
+
+# target to build an object file
+src/updateObj.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj
+.PHONY : src/updateObj.c.obj
+
+src/updateObj.i: src/updateObj.c.i
+
+.PHONY : src/updateObj.i
+
+# target to preprocess a source file
+src/updateObj.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.i
+.PHONY : src/updateObj.c.i
+
+src/updateObj.s: src/updateObj.c.s
+
+.PHONY : src/updateObj.s
+
+# target to generate assembly for a file
+src/updateObj.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.s
+.PHONY : src/updateObj.c.s
+
+src/vec2.obj: src/vec2.c.obj
+
+.PHONY : src/vec2.obj
+
+# target to build an object file
+src/vec2.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj
+.PHONY : src/vec2.c.obj
+
+src/vec2.i: src/vec2.c.i
+
+.PHONY : src/vec2.i
+
+# target to preprocess a source file
+src/vec2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/vec2.c.i
+.PHONY : src/vec2.c.i
+
+src/vec2.s: src/vec2.c.s
+
+.PHONY : src/vec2.s
+
+# target to generate assembly for a file
+src/vec2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/vec2.c.s
+.PHONY : src/vec2.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -178,9 +421,36 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SDLWindowPrj"
+	@echo "... src/GuiMng.obj"
+	@echo "... src/GuiMng.i"
+	@echo "... src/GuiMng.s"
+	@echo "... src/aiv-list.obj"
+	@echo "... src/aiv-list.i"
+	@echo "... src/aiv-list.s"
+	@echo "... src/bulletMng.obj"
+	@echo "... src/bulletMng.i"
+	@echo "... src/bulletMng.s"
+	@echo "... src/enemyMng.obj"
+	@echo "... src/enemyMng.i"
+	@echo "... src/enemyMng.s"
+	@echo "... src/global_variables.obj"
+	@echo "... src/global_variables.i"
+	@echo "... src/global_variables.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/physicsMng.obj"
+	@echo "... src/physicsMng.i"
+	@echo "... src/physicsMng.s"
+	@echo "... src/playerMng.obj"
+	@echo "... src/playerMng.i"
+	@echo "... src/playerMng.s"
+	@echo "... src/updateObj.obj"
+	@echo "... src/updateObj.i"
+	@echo "... src/updateObj.s"
+	@echo "... src/vec2.obj"
+	@echo "... src/vec2.i"
+	@echo "... src/vec2.s"
 .PHONY : help
 
 

@@ -1,12 +1,14 @@
 #ifndef VEC2_H
 #define VEC2_H
 
-#include "vec2.c"
+#include <math.h>
+
 
 typedef struct {
     float x;
     float y;
 } vec2;
+
 
 vec2 vec2_new(float x, float y);
 vec2 vec2_sub(vec2* v1, vec2* v2);

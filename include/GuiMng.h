@@ -9,11 +9,10 @@
 #ifndef GUI_MNG
 #define GUI_MNG
 
+
 #include "global_variables.h"
+#include "player.h"
 #include <stdlib.h>
-
-#include "guiMng.c"
-
 
 
 

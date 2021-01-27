@@ -1,17 +1,22 @@
+#define PLAYER_BULLET_N 30
+#define ENEMY_BULLET_N 30
+#define BULLET_ENEMY_VELOCITY 200.f
 
 
-#include "global_variables.h"
+#include "bulletMng.h"
+
+
+
+#include "bullet.h"
 #include "player.h"
 #include "enemy.h"
 #include "GuiMng.h"
-
 
 
 float player_bullet_damage = 20;
 float enemy_bullet_damage = 10;
 float player_bullet_velocity = 150.f;
 Mix_Chunk *shoot_player_sound;
-
 
 void bulletInit()
 {
@@ -41,7 +46,6 @@ void bulletInit()
     }
     //--------------------------------
     shoot_player_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav"); //load explosion sound
-    Mix_VolumeChunk(shoot_player_sound,20);
 }
 
 void shoot_playerBullet()
@@ -51,7 +55,8 @@ void shoot_playerBullet()
     {
         if (player_bullet[i].free)
         {
-            Mix_PlayChannel(-1, shoot_player_sound, 0);
+            //  Mix_PlayChannel(2, shoot_player_sound, 0);
+            //  Mix_ExpireChannel(2,100);
             player_bullet[i]
                 .go->target_rect->x = player_plane.go->target_rect->x + player_plane.go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
             player_bullet[i].go->target_rect->y = player_plane.go->target_rect->y - 30;
@@ -61,8 +66,10 @@ void shoot_playerBullet()
     }
 }
 
-void shoot_enemyBullet(type_enemy *e)
+void shoot_enemyBullet(void *enemy)
 {
+    type_enemy* e=(type_enemy*)enemy;
+
     for (size_t i = 0; i < 30; i++)
     {
         if (enemy_bullet[i].free)
@@ -107,6 +114,9 @@ void _updatePlayerBullet()
             player_bullet[i].go->target_rect->y -= player_bullet_velocity * STANDARD_VELOCITY;
             float a = STANDARD_VELOCITY;
 
+            vec2 prova = vec2_new(3, 5);
+            vec2 o = prova;
+
             if (player_bullet[i].go->target_rect->y <= -30)
             {
                 player_bullet[i].free = true;
@@ -148,7 +158,7 @@ void _updateEnemyBullet()
                 return;
             }
 
-            enemy_bullet[i].go->target_rect->y += BULLET_ENEMY_VELOCITY*STANDARD_VELOCITY;
+            enemy_bullet[i].go->target_rect->y += BULLET_ENEMY_VELOCITY * STANDARD_VELOCITY;
 
             if (enemy_bullet[i].go->target_rect->y >= SCREEN_HEIGHT)
             {

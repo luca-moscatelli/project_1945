@@ -1,7 +1,52 @@
 [
 {
   "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/GuiMng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/GuiMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/aiv-list.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/aiv-list.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
   "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/main.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/main.c",
   "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/main.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/physicsMng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/physicsMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/updateObj.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/updateObj.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/vec2.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/vec2.c"
 }
 ]

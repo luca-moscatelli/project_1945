@@ -4,7 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/GuiMng.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/aiv-list.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj"
   "C:/Users/39348/Documents/progetti_c/1945-project/src/main.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/physicsMng.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/updateObj.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj"
+  "C:/Users/39348/Documents/progetti_c/1945-project/src/vec2.c" "C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

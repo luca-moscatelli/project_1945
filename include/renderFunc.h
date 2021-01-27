@@ -3,12 +3,11 @@
 #ifndef RENDER_FUNC
 #define RENDER_FUNC
 
-#include "global_variables.h"
 #include "enemyMng.h"
-#include "bulletMng.h"
-#include "GuiMng.h"
 #include "powerUp_Mng.h"
 #include "player.h"
+#include "enemy.h"
+
 
 Uint32 plane_frame_n = 0;
 
@@ -30,6 +29,7 @@ int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_r
         while (rect.y <= SCREEN_HEIGHT)
         {
             SDL_RenderCopyF(global_renderer, texture, texture_rect, &rect);
+            
 
             rect.y += global_unitSize.y;
         }
@@ -37,14 +37,6 @@ int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_r
         rect.x += global_unitSize.x;
         rect.y = target_rect->y;
     }
-
-    return 0;
-}
-
-int __renderIsland(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect)
-{
-
-    SDL_RenderCopyF(global_renderer, texture, NULL, target_rect);
 
     return 0;
 }
@@ -138,7 +130,7 @@ int _renderIsland()
 
     for (size_t i = 0; i < 3; i++)
     {
-        __renderIsland(island[i].texture, NULL, island[i].target_rect);
+        renderGameObject(island[i]);
     }
 
     return 0;
@@ -148,7 +140,7 @@ int renderScene()
 {
     //order to render
 
-    _renderSea(water.texture, water.texture_rect, water.target_rect); //1
+    _renderSea(water->texture, water->texture_rect, water->target_rect); //1
     _renderIsland();                                                  //2
     _renderPlane();                                                   //3
     renderEnemy();

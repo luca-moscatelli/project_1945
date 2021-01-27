@@ -8,6 +8,7 @@
                 "${workspaceFolder}",
                 "${workspaceFolder}/include"
 
+
             ],
             "defines": [
                 "_DEBUG",

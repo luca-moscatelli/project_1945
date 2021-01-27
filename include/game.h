@@ -7,42 +7,33 @@
 #include <SDL_image.h>
 #include <stdlib.h>
 #include "renderFunc.h"
-#include "global_variables.h"
 #include "updateObj.h"
-#include "bulletMng.h"
-#include "enemyMng.h"
-#include "GuiMng.h"
 #include "playerMng.h"
-#include "powerUp_Mng.h"
 #include <stdio.h>
 
 void _initGameAsset()
 {
 
-    water.texture = create_texture("resources/assets/map/water.png");
-    water.texture_rect = create_rect(0, 0, 32, 32);
-    water.target_rect = create_Frect(0, 0, global_unitSize.x, global_unitSize.y);
+    SDL_Texture *tex = create_texture("resources/assets/map/water.png");
+    SDL_Rect *rect = create_rect(0, 0, 32, 32);
+    SDL_FRect *frect = create_Frect(0, 0, global_unitSize.x, global_unitSize.y);
+    water = create_gameObject(tex, rect, frect);
 
-    //init player
-    // SDL_Texture *tex = create_texture("resources/assets/player/myplane_strip3.png");
-    // SDL_Rect *texRect = create_rect(0, 0, 195 / 3, 65);
-    // SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.65f, global_unitSize.x, global_unitSize.y);
+    tex = create_texture("resources/assets/map/island1.png");
+    rect = NULL;
+    frect = create_Frect(0, 0, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    island[0] = create_gameObject(tex, rect, frect);
 
-    // player_plane.go = create_gameObject(tex, texRect, targetRect);
-    //--init player
+    tex = create_texture("resources/assets/map/island2.png");
+    rect = NULL;
+    frect = create_Frect(120, 150, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    island[1] = create_gameObject(tex, rect, frect);
 
-    island[0].texture = create_texture("resources/assets/map/island1.png");
-    island[1].texture = create_texture("resources/assets/map/island2.png");
-    island[2].texture = create_texture("resources/assets/map/island3.png");
+    tex = create_texture("resources/assets/map/island3.png");
+    rect = NULL;
+    frect = create_Frect(200, 200, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
 
-    island[0].texture_rect = create_rect(0, 0, 50, 57);
-    island[0].target_rect = create_Frect(0, 0, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
-
-    island[1].texture_rect = create_rect(0, 0, 50, 57);
-    island[1].target_rect = create_Frect(120, 150, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
-
-    island[2].texture_rect = create_rect(0, 0, 50, 57);
-    island[2].target_rect = create_Frect(200, 200, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    island[2] = create_gameObject(tex, rect, frect);
 
     playerInit();
     bulletInit();
@@ -110,7 +101,8 @@ int init()
 
     Mix_PlayMusic(background_music, -1);
 
-  //  Mix_Volume(-1, 0);
+    Mix_Volume(-1, 20); //general volume
+    Mix_Volume(2, 40);  //player bullet  volume
 
     unit_size_norm = (float)SCREEN_HEIGHT / 480.f;
 
@@ -153,6 +145,16 @@ int init()
 
     done = false;
 
+    // SDL_RWops* file = SDL_RWFromFile("resources/assets/extra/Icon.ico","r+");
+
+    // SDL_Surface *icon = IMG_LoadICO_RW(file);
+
+    SDL_Surface *icon = IMG_Load("resources/assets/extra/Icon.png");
+
+    SDL_SetWindowIcon(global_window, icon);
+
+    SDL_FreeSurface(icon);
+
     _initGameAsset();
 
     return 0;
@@ -162,6 +164,8 @@ void exitGame()
 {
     SDL_DestroyRenderer(global_renderer);
     SDL_DestroyWindow(global_window);
+    Mix_CloseAudio();
+    Mix_Quit();
     SDL_Quit();
 }
 

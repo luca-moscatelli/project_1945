@@ -15,12 +15,12 @@ The C compiler identification is Clang, found in "C:/Users/39348/Documents/proge
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/PROGRA~2/GnuWin32/bin/make.exe cmTC_064dd/fast && C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_064dd.dir/build.make CMakeFiles/cmTC_064dd.dir/build
+Run Build Command(s):C:/PROGRA~2/GnuWin32/bin/make.exe cmTC_b823d/fast && C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_b823d.dir/build.make CMakeFiles/cmTC_b823d.dir/build
 make.exe[1]: Entering directory `C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_064dd.dir/CMakeCCompilerABI.c.obj
-"D:/Program Files/LLVM/bin/clang.exe"   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/cmTC_064dd.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCCompilerABI.c"
-Linking C executable cmTC_064dd.exe
-"D:/Program Files/LLVM/bin/clang.exe" -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd @CMakeFiles/cmTC_064dd.dir/objects1.rsp -o cmTC_064dd.exe -Xlinker /implib:cmTC_064dd.lib -Xlinker /pdb:C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp/cmTC_064dd.pdb -Xlinker /version:0.0  
+Building C object CMakeFiles/cmTC_b823d.dir/CMakeCCompilerABI.c.obj
+"D:/Program Files/LLVM/bin/clang.exe"   -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/cmTC_b823d.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeCCompilerABI.c"
+Linking C executable cmTC_b823d.exe
+"D:/Program Files/LLVM/bin/clang.exe" -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd @CMakeFiles/cmTC_b823d.dir/objects1.rsp -o cmTC_b823d.exe -Xlinker /implib:cmTC_b823d.lib -Xlinker /pdb:C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp/cmTC_b823d.pdb -Xlinker /version:0.0  
 make.exe[1]: Leaving directory `C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles/CMakeTmp'
 
 

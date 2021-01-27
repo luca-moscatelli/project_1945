@@ -76,10 +76,80 @@ include CMakeFiles/SDLWindowPrj.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SDLWindowPrj.dir/flags.make
 
+CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj: ../src/GuiMng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/GuiMng.c
+
+CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj: ../src/aiv-list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/aiv-list.c
+
+CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj: ../src/bulletMng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c
+
+CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj: ../src/enemyMng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c
+
+CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj: ../src/global_variables.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c
+
+CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
 	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/main.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/main.c
 
 CMakeFiles/SDLWindowPrj.dir/src/main.c.i: cmake_force
@@ -90,14 +160,88 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/main.c.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
 
+CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj: ../src/physicsMng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/physicsMng.c
+
+CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj: ../src/playerMng.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c
+
+CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj: ../src/updateObj.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/updateObj.c
+
+CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj: CMakeFiles/SDLWindowPrj.dir/flags.make
+CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj: CMakeFiles/SDLWindowPrj.dir/includes_C.rsp
+CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj: ../src/vec2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj"
+	"D:/Program Files/LLVM/bin/clang.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/vec2.c
+
+CMakeFiles/SDLWindowPrj.dir/src/vec2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SDLWindowPrj.dir/src/vec2.c.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/SDLWindowPrj.dir/src/vec2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SDLWindowPrj.dir/src/vec2.c.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_C_CREATE_ASSEMBLY_SOURCE
+
 # Object files for target SDLWindowPrj
 SDLWindowPrj_OBJECTS = \
-"CMakeFiles/SDLWindowPrj.dir/src/main.c.obj"
+"CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/main.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj" \
+"CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj"
 
 # External object files for target SDLWindowPrj
 SDLWindowPrj_EXTERNAL_OBJECTS =
 
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/aiv-list.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj
 SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/main.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj
+SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/src/vec2.c.obj
 SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/build.make
 SDLWindowPrj.exe: ../cmake/sdl2/lib/x64/SDL2.lib
 SDLWindowPrj.exe: ../cmake/sdl2_image/lib/x64/SDL2_image.lib
@@ -105,7 +249,7 @@ SDLWindowPrj.exe: ../cmake/sdl2_ttf/lib/x64/SDL2_ttf.lib
 SDLWindowPrj.exe: ../cmake/sdl2_mixer/lib/x64/SDL2_mixer.lib
 SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/linklibs.rsp
 SDLWindowPrj.exe: CMakeFiles/SDLWindowPrj.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable SDLWindowPrj.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:/Users/39348/Documents/progetti_c/1945-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable SDLWindowPrj.exe"
 	"D:/Program Files/LLVM/bin/clang.exe" -fuse-ld=lld-link -nostartfiles -nostdlib -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd @CMakeFiles/SDLWindowPrj.dir/objects1.rsp -o SDLWindowPrj.exe -Xlinker /implib:SDLWindowPrj.lib -Xlinker /pdb:C:/Users/39348/Documents/progetti_c/1945-project/build/SDLWindowPrj.pdb -Xlinker /version:0.0  @CMakeFiles/SDLWindowPrj.dir/linklibs.rsp
 	"C:/Program Files/CMake/bin/cmake.exe" -E copy_if_different C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2/lib/x64/SDL2.dll C:/Users/39348/Documents/progetti_c/1945-project/build
 	"C:/Program Files/CMake/bin/cmake.exe" -E copy_if_different C:/Users/39348/Documents/progetti_c/1945-project/cmake/sdl2_image/lib/x64/SDL2_image.dll C:/Users/39348/Documents/progetti_c/1945-project/build

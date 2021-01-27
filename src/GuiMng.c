@@ -1,11 +1,10 @@
 
-#include "GuiMng.h"
-#include "global_variables.h"
-#include "player.h"
-#include <stdlib.h>
+ #include "GuiMng.h"
+// #include "global_variables.h"
+// #include "player.h"
+// #include <stdlib.h>
 
 
-game_object *gui;
 game_object *life_icon[N_LIFE];
 game_object *life_bar;
 
