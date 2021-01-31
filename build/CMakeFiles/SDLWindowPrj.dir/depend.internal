@@ -51,6 +51,9 @@ CMakeFiles/SDLWindowPrj.dir/src/GuiMng.c.obj
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
  ../include/GuiMng.h
+ ../include/bullet.h
+ ../include/common.h
+ ../include/enemy.h
  ../include/global_variables.h
  ../include/player.h
  ../include/vec2.h
@@ -109,6 +112,7 @@ CMakeFiles/SDLWindowPrj.dir/src/bulletMng.c.obj
  ../include/GuiMng.h
  ../include/bullet.h
  ../include/bulletMng.h
+ ../include/common.h
  ../include/enemy.h
  ../include/global_variables.h
  ../include/player.h
@@ -163,12 +167,78 @@ CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.obj
  ../cmake/sdl2/include/close_code.h
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
+ ../include/bullet.h
  ../include/bulletMng.h
+ ../include/common.h
  ../include/enemy.h
  ../include/enemyMng.h
  ../include/global_variables.h
+ ../include/player.h
  ../include/vec2.h
  C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c
+CMakeFiles/SDLWindowPrj.dir/src/game.c.obj
+ ../cmake/sdl2/include/SDL.h
+ ../cmake/sdl2/include/SDL_assert.h
+ ../cmake/sdl2/include/SDL_atomic.h
+ ../cmake/sdl2/include/SDL_audio.h
+ ../cmake/sdl2/include/SDL_blendmode.h
+ ../cmake/sdl2/include/SDL_clipboard.h
+ ../cmake/sdl2/include/SDL_config.h
+ ../cmake/sdl2/include/SDL_cpuinfo.h
+ ../cmake/sdl2/include/SDL_endian.h
+ ../cmake/sdl2/include/SDL_error.h
+ ../cmake/sdl2/include/SDL_events.h
+ ../cmake/sdl2/include/SDL_filesystem.h
+ ../cmake/sdl2/include/SDL_gamecontroller.h
+ ../cmake/sdl2/include/SDL_gesture.h
+ ../cmake/sdl2/include/SDL_haptic.h
+ ../cmake/sdl2/include/SDL_hints.h
+ ../cmake/sdl2/include/SDL_joystick.h
+ ../cmake/sdl2/include/SDL_keyboard.h
+ ../cmake/sdl2/include/SDL_keycode.h
+ ../cmake/sdl2/include/SDL_loadso.h
+ ../cmake/sdl2/include/SDL_log.h
+ ../cmake/sdl2/include/SDL_main.h
+ ../cmake/sdl2/include/SDL_messagebox.h
+ ../cmake/sdl2/include/SDL_metal.h
+ ../cmake/sdl2/include/SDL_mouse.h
+ ../cmake/sdl2/include/SDL_mutex.h
+ ../cmake/sdl2/include/SDL_pixels.h
+ ../cmake/sdl2/include/SDL_platform.h
+ ../cmake/sdl2/include/SDL_power.h
+ ../cmake/sdl2/include/SDL_quit.h
+ ../cmake/sdl2/include/SDL_rect.h
+ ../cmake/sdl2/include/SDL_render.h
+ ../cmake/sdl2/include/SDL_rwops.h
+ ../cmake/sdl2/include/SDL_scancode.h
+ ../cmake/sdl2/include/SDL_sensor.h
+ ../cmake/sdl2/include/SDL_shape.h
+ ../cmake/sdl2/include/SDL_stdinc.h
+ ../cmake/sdl2/include/SDL_surface.h
+ ../cmake/sdl2/include/SDL_system.h
+ ../cmake/sdl2/include/SDL_thread.h
+ ../cmake/sdl2/include/SDL_timer.h
+ ../cmake/sdl2/include/SDL_touch.h
+ ../cmake/sdl2/include/SDL_version.h
+ ../cmake/sdl2/include/SDL_video.h
+ ../cmake/sdl2/include/begin_code.h
+ ../cmake/sdl2/include/close_code.h
+ ../cmake/sdl2_image/include/SDL_image.h
+ ../cmake/sdl2_mixer/include/SDL_mixer.h
+ ../cmake/sdl2_ttf/include/SDL_ttf.h
+ ../include/GuiMng.h
+ ../include/bullet.h
+ ../include/bulletMng.h
+ ../include/common.h
+ ../include/enemy.h
+ ../include/enemyMng.h
+ ../include/global_variables.h
+ ../include/player.h
+ ../include/playerMng.h
+ ../include/renderFunc.h
+ ../include/updateObj.h
+ ../include/vec2.h
+ C:/Users/39348/Documents/progetti_c/1945-project/src/game.c
 CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj
  ../cmake/sdl2/include/SDL.h
  ../cmake/sdl2/include/SDL_assert.h
@@ -218,7 +288,11 @@ CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj
  ../cmake/sdl2/include/close_code.h
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
+ ../include/bullet.h
+ ../include/common.h
+ ../include/enemy.h
  ../include/global_variables.h
+ ../include/player.h
  ../include/vec2.h
  C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c
 CMakeFiles/SDLWindowPrj.dir/src/main.c.obj
@@ -270,17 +344,12 @@ CMakeFiles/SDLWindowPrj.dir/src/main.c.obj
  ../cmake/sdl2/include/close_code.h
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
- ../cmake/sdl2_ttf/include/SDL_ttf.h
- ../include/bulletMng.h
+ ../include/bullet.h
+ ../include/common.h
  ../include/enemy.h
- ../include/enemyMng.h
  ../include/game.h
  ../include/global_variables.h
  ../include/player.h
- ../include/playerMng.h
- ../include/powerUp_Mng.h
- ../include/renderFunc.h
- ../include/updateObj.h
  ../include/vec2.h
  C:/Users/39348/Documents/progetti_c/1945-project/src/main.c
 CMakeFiles/SDLWindowPrj.dir/src/physicsMng.c.obj
@@ -335,12 +404,78 @@ CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
  ../include/GuiMng.h
+ ../include/bullet.h
  ../include/bulletMng.h
+ ../include/common.h
+ ../include/enemy.h
  ../include/global_variables.h
  ../include/player.h
  ../include/playerMng.h
  ../include/vec2.h
  C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c
+CMakeFiles/SDLWindowPrj.dir/src/powerUp_Mng.c.obj
+ C:/Users/39348/Documents/progetti_c/1945-project/src/powerUp_Mng.c
+CMakeFiles/SDLWindowPrj.dir/src/renderFunc.c.obj
+ ../cmake/sdl2/include/SDL.h
+ ../cmake/sdl2/include/SDL_assert.h
+ ../cmake/sdl2/include/SDL_atomic.h
+ ../cmake/sdl2/include/SDL_audio.h
+ ../cmake/sdl2/include/SDL_blendmode.h
+ ../cmake/sdl2/include/SDL_clipboard.h
+ ../cmake/sdl2/include/SDL_config.h
+ ../cmake/sdl2/include/SDL_cpuinfo.h
+ ../cmake/sdl2/include/SDL_endian.h
+ ../cmake/sdl2/include/SDL_error.h
+ ../cmake/sdl2/include/SDL_events.h
+ ../cmake/sdl2/include/SDL_filesystem.h
+ ../cmake/sdl2/include/SDL_gamecontroller.h
+ ../cmake/sdl2/include/SDL_gesture.h
+ ../cmake/sdl2/include/SDL_haptic.h
+ ../cmake/sdl2/include/SDL_hints.h
+ ../cmake/sdl2/include/SDL_joystick.h
+ ../cmake/sdl2/include/SDL_keyboard.h
+ ../cmake/sdl2/include/SDL_keycode.h
+ ../cmake/sdl2/include/SDL_loadso.h
+ ../cmake/sdl2/include/SDL_log.h
+ ../cmake/sdl2/include/SDL_main.h
+ ../cmake/sdl2/include/SDL_messagebox.h
+ ../cmake/sdl2/include/SDL_metal.h
+ ../cmake/sdl2/include/SDL_mouse.h
+ ../cmake/sdl2/include/SDL_mutex.h
+ ../cmake/sdl2/include/SDL_pixels.h
+ ../cmake/sdl2/include/SDL_platform.h
+ ../cmake/sdl2/include/SDL_power.h
+ ../cmake/sdl2/include/SDL_quit.h
+ ../cmake/sdl2/include/SDL_rect.h
+ ../cmake/sdl2/include/SDL_render.h
+ ../cmake/sdl2/include/SDL_rwops.h
+ ../cmake/sdl2/include/SDL_scancode.h
+ ../cmake/sdl2/include/SDL_sensor.h
+ ../cmake/sdl2/include/SDL_shape.h
+ ../cmake/sdl2/include/SDL_stdinc.h
+ ../cmake/sdl2/include/SDL_surface.h
+ ../cmake/sdl2/include/SDL_system.h
+ ../cmake/sdl2/include/SDL_thread.h
+ ../cmake/sdl2/include/SDL_timer.h
+ ../cmake/sdl2/include/SDL_touch.h
+ ../cmake/sdl2/include/SDL_version.h
+ ../cmake/sdl2/include/SDL_video.h
+ ../cmake/sdl2/include/begin_code.h
+ ../cmake/sdl2/include/close_code.h
+ ../cmake/sdl2_image/include/SDL_image.h
+ ../cmake/sdl2_mixer/include/SDL_mixer.h
+ ../include/GuiMng.h
+ ../include/bullet.h
+ ../include/bulletMng.h
+ ../include/common.h
+ ../include/enemy.h
+ ../include/enemyMng.h
+ ../include/global_variables.h
+ ../include/player.h
+ ../include/powerUp_Mng.h
+ ../include/renderFunc.h
+ ../include/vec2.h
+ C:/Users/39348/Documents/progetti_c/1945-project/src/renderFunc.c
 CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj
  ../cmake/sdl2/include/SDL.h
  ../cmake/sdl2/include/SDL_assert.h
@@ -390,9 +525,13 @@ CMakeFiles/SDLWindowPrj.dir/src/updateObj.c.obj
  ../cmake/sdl2/include/close_code.h
  ../cmake/sdl2_image/include/SDL_image.h
  ../cmake/sdl2_mixer/include/SDL_mixer.h
+ ../include/bullet.h
  ../include/bulletMng.h
+ ../include/common.h
+ ../include/enemy.h
  ../include/enemyMng.h
  ../include/global_variables.h
+ ../include/player.h
  ../include/playerMng.h
  ../include/powerUp_Mng.h
  ../include/updateObj.h

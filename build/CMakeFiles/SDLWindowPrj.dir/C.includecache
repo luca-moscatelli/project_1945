@@ -651,12 +651,22 @@ close_code.h
 ../include/GuiMng.h
 global_variables.h
 ../include/global_variables.h
-player.h
-../include/player.h
 stdlib.h
 -
 
+../include/bullet.h
+common.h
+../include/common.h
+
 ../include/bulletMng.h
+global_variables.h
+../include/global_variables.h
+
+../include/common.h
+SDL.h
+../include/SDL.h
+
+../include/enemy.h
 
 ../include/global_variables.h
 SDL_image.h
@@ -667,24 +677,26 @@ stdlib.h
 -
 vec2.h
 ../include/vec2.h
+player.h
+../include/player.h
+bullet.h
+../include/bullet.h
+enemy.h
+../include/enemy.h
 
 ../include/player.h
-global_variables.h
-../include/global_variables.h
-
-../include/playerMng.h
-bulletMng.h
-../include/bulletMng.h
-global_variables.h
-../include/global_variables.h
+common.h
+../include/common.h
 
 ../include/vec2.h
 math.h
 -
 
-C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c
-playerMng.h
-C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c
+bulletMng.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.h
+enemy.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/enemy.h
 player.h
 C:/Users/39348/Documents/progetti_c/1945-project/src/player.h
 GuiMng.h

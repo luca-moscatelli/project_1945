@@ -8,17 +8,17 @@
 int main()
 {
 
-    init();
+   global_var* v= init();
 
-    while (!done)
+    while (!v->done)
     {
         
 
-        play();
+        play(v);
     }
 
     //Clean Up
-    exitGame();
+    exitGame(v);
 
     return 0;
 }

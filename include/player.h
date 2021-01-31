@@ -2,7 +2,7 @@
 #ifndef PLAYER
 #define PLAYER
 
-#include "global_variables.h"
+#include "common.h"
 
 enum
 {
@@ -13,6 +13,7 @@ enum
 typedef unsigned char player_state;
 
 
+
 typedef struct
 {
     game_object *go;
@@ -21,13 +22,10 @@ typedef struct
     float hp;
     float explosion_time;
     float respawn_time;
+    float player_ratioCont;
     player_state state;
     uint32_t life;
 
 } type_player;
-
-
-type_player player_plane;
-
 
 #endif

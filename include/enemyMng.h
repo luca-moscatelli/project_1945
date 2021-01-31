@@ -9,12 +9,12 @@
 
 
 
-void enemyInit();//init enemy 
+void enemyInit(global_var* v);//init enemy 
 
-void enemyUpdate();//update all enemy
+void enemyUpdate(type_enemy* enemy,global_var* v);//update all enemy
 
-void renderEnemy();//render all enemy
+void renderEnemy(global_var* v);//render all enemy
 
-void _SetFrameExplosion(game_object *go, float ExplosionTime, SDL_Rect *explosionTexure_Rect[]);
+//void _SetFrameExplosion(game_object *go, float ExplosionTime, SDL_Rect *explosionTexure_Rect[]);
 
 #endif

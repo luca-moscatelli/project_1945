@@ -17,15 +17,15 @@
 #include "bulletMng.h"
 #include "global_variables.h"
 
-void playerInit();
+void playerInit(global_var* v);
 
 
-void UpdatePlayer();
+void UpdatePlayer(global_var *v);
 
 
-boolean MovePlayer(SDL_Keycode key);
+boolean MovePlayer(SDL_Keycode key,type_player* player_plane,game_object* gui);
 
-boolean ShootPlayer(SDL_KeyCode key);
+boolean ShootPlayer(SDL_KeyCode key,type_player* player,bullet_obj* player_bullet);
 
 
 #endif

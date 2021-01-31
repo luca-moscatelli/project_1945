@@ -1,8 +1,7 @@
 
 
-
-
 #include "vec2.h"
+#include <math.h>
 
 
 vec2 vec2_new(float x, float y)

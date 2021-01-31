@@ -21,6 +21,11 @@
 },
 {
   "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/game.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/game.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/game.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
   "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/global_variables.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c",
   "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.c"
 },
@@ -38,6 +43,16 @@
   "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
   "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c",
   "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/playerMng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/powerUp_Mng.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/powerUp_Mng.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/powerUp_Mng.c"
+},
+{
+  "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",
+  "command": "\"D:/Program Files/LLVM/bin/clang.exe\"  @CMakeFiles/SDLWindowPrj.dir/includes_C.rsp -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -o CMakeFiles/SDLWindowPrj.dir/src/renderFunc.c.obj -c C:/Users/39348/Documents/progetti_c/1945-project/src/renderFunc.c",
+  "file": "C:/Users/39348/Documents/progetti_c/1945-project/src/renderFunc.c"
 },
 {
   "directory": "C:/Users/39348/Documents/progetti_c/1945-project/build",

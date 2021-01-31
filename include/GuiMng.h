@@ -11,16 +11,15 @@
 
 
 #include "global_variables.h"
-#include "player.h"
 #include <stdlib.h>
 
 
 
-void GuiInit();
+void GuiInit(global_var* v);
 
-void UpdateGui();
+void UpdateGui(type_player* player_plane);
 
-void RenderGui();
+void RenderGui(global_var* v);
 
 
 #endif

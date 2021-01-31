@@ -30,7 +30,6 @@ typedef struct
 
 
 
-type_enemy *enemy;
 
 
 

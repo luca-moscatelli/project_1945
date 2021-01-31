@@ -1,22 +1,19 @@
 #ifndef BULLET
 #define BULLET
 
-
-#include "global_variables.h"
+#include "common.h"
 
 typedef struct
 {
     boolean free;
     game_object *go;
 
-} type_bullet;
+} bullet_obj;
 
-
-type_bullet *player_bullet;
-
-type_bullet *enemy_bullet;
-
-
-
+typedef struct
+{
+    bullet_obj* bullets;
+    float damage;
+}group_bullet;
 
 #endif

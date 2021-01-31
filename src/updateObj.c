@@ -1,20 +1,17 @@
-// #include "global_variables.h"
-// #include "bulletMng.h"
-// #include "playerMng.h"
-// #include <stdlib.h>
-// #include "enemyMng.h"
-// #include "powerUp_Mng.h"
+
+#include "global_variables.h"
+#include "playerMng.h"
+#include <stdlib.h>
+#include "enemyMng.h"
+#include "powerUp_Mng.h"
 #include "updateObj.h"
 #include "bulletMng.h"
 
 
 
-float offset_background;
 
 
-float bgVelocity = 100;
-
-int _updateIsland()
+int _updateIsland(game_object** island,float bgVelocity,global_var* v)
 {
     for (size_t i = 0; i < 3; i++)
     {
@@ -31,32 +28,32 @@ int _updateIsland()
     return 0;
 }
 
-int _updateSea()
+int _updateSea(global_var* v)
 {
-    if (offset_background >= global_unitSize.y - 70)
+    if (v->offset_background >= v->global_unitSize.y - 70)
     {
-        offset_background = -70;
+        v->offset_background = -70;
     }
 
-    water->target_rect->y = offset_background;
+    v->water->target_rect->y = v->offset_background;
 
-    offset_background += bgVelocity * STANDARD_VELOCITY;
+    v->offset_background += v->bgVelocity * STANDARD_VELOCITY;
 
     return 0;
 }
 
-void update()
+void update(global_var* v)
 {
-    _updateIsland();
+    _updateIsland(v->island,v->bgVelocity,v);
 
-    enemyUpdate();
+    enemyUpdate(v->enemies,v);
 
-    updateBullet();
+    updateBullet(v->player_bullet,v->enemy_bullet,v->enemies,STANDARD_VELOCITY,v->player_plane);
 
-    _updateSea();
+    _updateSea(v);
 
-    UpdatePlayer();
+    UpdatePlayer(v);
 
-    PowerUp_update();
+ //   PowerUp_update();
 
 }

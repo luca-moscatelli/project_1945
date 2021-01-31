@@ -1,28 +1,24 @@
 #define PLAYER_BULLET_N 30
 #define ENEMY_BULLET_N 30
+#define PLAYER_BULLET_VELOCITY 250.f
 #define BULLET_ENEMY_VELOCITY 200.f
 
-
 #include "bulletMng.h"
-
-
-
-#include "bullet.h"
-#include "player.h"
 #include "enemy.h"
+#include "player.h"
 #include "GuiMng.h"
 
-
-float player_bullet_damage = 20;
-float enemy_bullet_damage = 10;
-float player_bullet_velocity = 150.f;
-Mix_Chunk *shoot_player_sound;
-
-void bulletInit()
+void bulletInit(global_var *v)
 {
+
+    vec2 global_unitSize = v->global_unitSize;
+    SDL_Renderer* renderer=v->global_renderer;
+
     //init vector bullet player-------
-    player_bullet = (type_bullet *)malloc(sizeof(type_bullet) * PLAYER_BULLET_N);
-    SDL_Texture *tex = create_texture("resources/assets/player/bullet.png");
+    v->player_bullet.bullets = (bullet_obj *)malloc(sizeof(bullet_obj) * PLAYER_BULLET_N);
+    bullet_obj *player_bullet = v->player_bullet.bullets;
+    
+    SDL_Texture *tex = create_texture("resources/assets/player/bullet.png", renderer);
     SDL_Rect *rect_Tex = create_rect(12, 5, 20, 20);
 
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
@@ -34,8 +30,10 @@ void bulletInit()
     //--------------------------------
 
     //init vector bullet enemies-------
-    enemy_bullet = (type_bullet *)malloc(sizeof(type_bullet) * ENEMY_BULLET_N);
-    tex = create_texture("resources/assets/enemy/enemybullet1.png");
+    v->enemy_bullet.bullets = (bullet_obj *)malloc(sizeof(bullet_obj) * ENEMY_BULLET_N);
+    bullet_obj *enemy_bullet = v->enemy_bullet.bullets;
+    
+    tex = create_texture("resources/assets/enemy/enemybullet1.png", renderer);
     rect_Tex = create_rect(12, 5, 20, 20);
 
     for (size_t i = 0; i < ENEMY_BULLET_N; i++)
@@ -45,10 +43,10 @@ void bulletInit()
         enemy_bullet[i].free = true;
     }
     //--------------------------------
-    shoot_player_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav"); //load explosion sound
+    v->shoot_player_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav"); //load explosion sound
 }
 
-void shoot_playerBullet()
+void shoot_playerBullet(bullet_obj *player_bullet, type_player *player_plane)
 {
 
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
@@ -58,17 +56,17 @@ void shoot_playerBullet()
             //  Mix_PlayChannel(2, shoot_player_sound, 0);
             //  Mix_ExpireChannel(2,100);
             player_bullet[i]
-                .go->target_rect->x = player_plane.go->target_rect->x + player_plane.go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
-            player_bullet[i].go->target_rect->y = player_plane.go->target_rect->y - 30;
+                .go->target_rect->x = player_plane->go->target_rect->x + player_plane->go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
+            player_bullet[i].go->target_rect->y = player_plane->go->target_rect->y - 30;
             player_bullet[i].free = false;
             return;
         }
     }
 }
 
-void shoot_enemyBullet(void *enemy)
+void shoot_enemyBullet(void *enemy, bullet_obj *enemy_bullet)
 {
-    type_enemy* e=(type_enemy*)enemy;
+    type_enemy *e = (type_enemy *)enemy;
 
     for (size_t i = 0; i < 30; i++)
     {
@@ -82,20 +80,20 @@ void shoot_enemyBullet(void *enemy)
     }
 }
 
-void _updatePlayerBullet()
+void _updatePlayerBullet(group_bullet type_bullet_player, group_bullet type_bullet_enemy, type_enemy *enemy, float norm_velocity)
 {
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
     {
-        if (!player_bullet[i].free)
+        if (!type_bullet_player.bullets[i].free)
         {
             for (size_t j = 0; j < ENEMY_N; j++)
             {
-                if (check_collision(*((player_bullet[i]).go)->target_rect, *((enemy[j].go)->target_rect)))
+                if (check_collision(*((type_bullet_player.bullets[i]).go)->target_rect, *((enemy[j].go)->target_rect)))
                 {
                     if (enemy[j].state != dead)
                     {
-                        enemy[j].hp -= player_bullet_damage;
-                        player_bullet[i].free = true;
+                        enemy[j].hp -= type_bullet_player.damage;
+                        type_bullet_player.bullets[i].free = true;
                         return;
                     }
                 }
@@ -103,29 +101,25 @@ void _updatePlayerBullet()
 
             for (size_t j = 0; j < ENEMY_BULLET_N; j++)
             {
-                if (check_collision(*((player_bullet[i]).go)->target_rect, *((enemy_bullet[j].go)->target_rect)))
+                if (check_collision(*((type_bullet_player.bullets[i]).go)->target_rect, *((type_bullet_enemy.bullets[j].go)->target_rect)))
                 {
-                    enemy_bullet[j].free = true;
-                    player_bullet[i].free = true;
+                    type_bullet_enemy.bullets[j].free = true;
+                    type_bullet_player.bullets[i].free = true;
                     return;
                 }
             }
 
-            player_bullet[i].go->target_rect->y -= player_bullet_velocity * STANDARD_VELOCITY;
-            float a = STANDARD_VELOCITY;
+            type_bullet_player.bullets[i].go->target_rect->y -= PLAYER_BULLET_VELOCITY * norm_velocity;
 
-            vec2 prova = vec2_new(3, 5);
-            vec2 o = prova;
-
-            if (player_bullet[i].go->target_rect->y <= -30)
+            if (type_bullet_player.bullets[i].go->target_rect->y <= -30)
             {
-                player_bullet[i].free = true;
+                type_bullet_player.bullets[i].free = true;
             }
         }
     }
 }
 
-void __checkFreeBullet(type_bullet *bullet_type, int N_bullet)
+void __checkFreeBullet(bullet_obj *bullet_type, int N_bullet)
 {
     for (size_t i = 0; i < N_bullet; i++)
     {
@@ -136,29 +130,29 @@ void __checkFreeBullet(type_bullet *bullet_type, int N_bullet)
     }
 }
 
-void _updateGenericBullet()
+void _updateGenericBullet(bullet_obj *enemy_bullet, bullet_obj *player_bullet)
 {
     __checkFreeBullet(enemy_bullet, ENEMY_BULLET_N);
     __checkFreeBullet(player_bullet, PLAYER_BULLET_N);
 }
 
-void _updateEnemyBullet()
+void _updateEnemyBullet(bullet_obj *enemy_bullet, float enemy_bullet_damage, type_player *player_plane, float std_velocity)
 {
     for (size_t i = 0; i < ENEMY_BULLET_N; i++)
     {
         if (!enemy_bullet[i].free)
         {
 
-            if (check_collision(*((enemy_bullet[i]).go)->target_rect, *((player_plane.go)->target_rect)))
+            if (check_collision(*((enemy_bullet[i]).go)->target_rect, *((player_plane->go)->target_rect)))
             {
 
-                player_plane.hp -= enemy_bullet_damage;
-                UpdateGui();
+                player_plane->hp -= enemy_bullet_damage;
+                UpdateGui(player_plane);
                 enemy_bullet[i].free = true;
                 return;
             }
 
-            enemy_bullet[i].go->target_rect->y += BULLET_ENEMY_VELOCITY * STANDARD_VELOCITY;
+            enemy_bullet[i].go->target_rect->y += BULLET_ENEMY_VELOCITY * std_velocity;
 
             if (enemy_bullet[i].go->target_rect->y >= SCREEN_HEIGHT)
             {
@@ -168,28 +162,28 @@ void _updateEnemyBullet()
     }
 }
 
-void updateBullet()
+void updateBullet(group_bullet type_bullet_player, group_bullet type_bullet_enemy, type_enemy *enemy, float norm_velocity, type_player *player)
 {
-    _updateGenericBullet();
-    _updatePlayerBullet();
-    _updateEnemyBullet();
+    _updateGenericBullet(type_bullet_enemy.bullets, type_bullet_player.bullets);
+    _updatePlayerBullet(type_bullet_player, type_bullet_enemy, enemy, norm_velocity);
+    _updateEnemyBullet(type_bullet_enemy.bullets, type_bullet_enemy.damage, player, norm_velocity);
 }
 
-int renderBullet()
+int renderBullet(SDL_Renderer *renderer, bullet_obj *enemy_bullet, bullet_obj *player_bullet)
 {
 
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
     {
         if (player_bullet[i].free)
             continue;
-        renderGameObject(player_bullet[i].go);
+        renderGameObject(player_bullet[i].go, renderer);
     }
 
     for (size_t i = 0; i < ENEMY_BULLET_N; i++)
     {
         if (enemy_bullet[i].free)
             continue;
-        renderGameObject(enemy_bullet[i].go);
+        renderGameObject(enemy_bullet[i].go, renderer);
     }
 
     return 0;

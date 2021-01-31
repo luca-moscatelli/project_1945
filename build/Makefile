@@ -250,6 +250,33 @@ src/enemyMng.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/enemyMng.c.s
 .PHONY : src/enemyMng.c.s
 
+src/game.obj: src/game.c.obj
+
+.PHONY : src/game.obj
+
+# target to build an object file
+src/game.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/game.c.obj
+.PHONY : src/game.c.obj
+
+src/game.i: src/game.c.i
+
+.PHONY : src/game.i
+
+# target to preprocess a source file
+src/game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/game.c.i
+.PHONY : src/game.c.i
+
+src/game.s: src/game.c.s
+
+.PHONY : src/game.s
+
+# target to generate assembly for a file
+src/game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/game.c.s
+.PHONY : src/game.c.s
+
 src/global_variables.obj: src/global_variables.c.obj
 
 .PHONY : src/global_variables.obj
@@ -358,6 +385,60 @@ src/playerMng.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/playerMng.c.s
 .PHONY : src/playerMng.c.s
 
+src/powerUp_Mng.obj: src/powerUp_Mng.c.obj
+
+.PHONY : src/powerUp_Mng.obj
+
+# target to build an object file
+src/powerUp_Mng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/powerUp_Mng.c.obj
+.PHONY : src/powerUp_Mng.c.obj
+
+src/powerUp_Mng.i: src/powerUp_Mng.c.i
+
+.PHONY : src/powerUp_Mng.i
+
+# target to preprocess a source file
+src/powerUp_Mng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/powerUp_Mng.c.i
+.PHONY : src/powerUp_Mng.c.i
+
+src/powerUp_Mng.s: src/powerUp_Mng.c.s
+
+.PHONY : src/powerUp_Mng.s
+
+# target to generate assembly for a file
+src/powerUp_Mng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/powerUp_Mng.c.s
+.PHONY : src/powerUp_Mng.c.s
+
+src/renderFunc.obj: src/renderFunc.c.obj
+
+.PHONY : src/renderFunc.obj
+
+# target to build an object file
+src/renderFunc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/renderFunc.c.obj
+.PHONY : src/renderFunc.c.obj
+
+src/renderFunc.i: src/renderFunc.c.i
+
+.PHONY : src/renderFunc.i
+
+# target to preprocess a source file
+src/renderFunc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/renderFunc.c.i
+.PHONY : src/renderFunc.c.i
+
+src/renderFunc.s: src/renderFunc.c.s
+
+.PHONY : src/renderFunc.s
+
+# target to generate assembly for a file
+src/renderFunc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SDLWindowPrj.dir/build.make CMakeFiles/SDLWindowPrj.dir/src/renderFunc.c.s
+.PHONY : src/renderFunc.c.s
+
 src/updateObj.obj: src/updateObj.c.obj
 
 .PHONY : src/updateObj.obj
@@ -433,6 +514,9 @@ help:
 	@echo "... src/enemyMng.obj"
 	@echo "... src/enemyMng.i"
 	@echo "... src/enemyMng.s"
+	@echo "... src/game.obj"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
 	@echo "... src/global_variables.obj"
 	@echo "... src/global_variables.i"
 	@echo "... src/global_variables.s"
@@ -445,6 +529,12 @@ help:
 	@echo "... src/playerMng.obj"
 	@echo "... src/playerMng.i"
 	@echo "... src/playerMng.s"
+	@echo "... src/powerUp_Mng.obj"
+	@echo "... src/powerUp_Mng.i"
+	@echo "... src/powerUp_Mng.s"
+	@echo "... src/renderFunc.obj"
+	@echo "... src/renderFunc.i"
+	@echo "... src/renderFunc.s"
 	@echo "... src/updateObj.obj"
 	@echo "... src/updateObj.i"
 	@echo "... src/updateObj.s"
