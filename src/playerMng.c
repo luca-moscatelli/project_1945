@@ -19,7 +19,7 @@ void playerInit(global_var *v)
 
     v->player_texture_plane = create_texture("resources/assets/player/myplane_strip3.png", v->global_renderer);
     v->player_texRect_plane = create_rect(0, 0, 65, 65);
-    SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f - v->global_unitSize.x * 0.5f, SCREEN_HEIGHT * 0.65f, v->global_unitSize.x, v->global_unitSize.y);
+    SDL_FRect *targetRect = create_Frect(SCREEN_WIDTH * 0.5f -UNIT_SIZE_X * 0.5f, SCREEN_HEIGHT * 0.65f, UNIT_SIZE_X, UNIT_SIZE_Y);
 
     for (size_t i = 0; i < 7; i++)
     {
@@ -83,7 +83,7 @@ void _PlayerDead_Update(global_var *v)
         v->player_plane->ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
         v->player_plane->respawn_time = PLAYER_RESPAWN_TIME;
 
-        v->player_plane->go->target_rect->x = SCREEN_WIDTH * 0.5f - v->global_unitSize.x * 0.5f;
+        v->player_plane->go->target_rect->x = SCREEN_WIDTH * 0.5f - UNIT_SIZE_X;
         v->player_plane->go->target_rect->y = SCREEN_HEIGHT * 0.65f;
         UpdateGui(v->player_plane);
     }
@@ -164,13 +164,13 @@ boolean MovePlayer(SDL_Keycode key,type_player* player_plane,game_object* gui)
     return false;
 }
 
-boolean ShootPlayer(SDL_KeyCode key,type_player* player,bullet_obj* player_bullet)
+boolean ShootPlayer(SDL_KeyCode key,type_player* player,bullet_obj* player_bullet,Mix_Chunk* playerShoot_sound)
 {
 
     if (key == SDLK_SPACE && player->player_ratioCont <= 0)
     {
 
-        shoot_playerBullet(player_bullet,player);
+        shoot_playerBullet(player_bullet,player,playerShoot_sound);
         player->player_ratioCont = PLAYER_RATIO_TIME;
         return true;
     }

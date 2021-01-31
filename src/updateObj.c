@@ -30,7 +30,7 @@ int _updateIsland(game_object** island,float bgVelocity,global_var* v)
 
 int _updateSea(global_var* v)
 {
-    if (v->offset_background >= v->global_unitSize.y - 70)
+    if (v->offset_background >= UNIT_SIZE_Y - 70)
     {
         v->offset_background = -70;
     }

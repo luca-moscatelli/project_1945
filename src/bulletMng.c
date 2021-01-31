@@ -11,7 +11,7 @@
 void bulletInit(global_var *v)
 {
 
-    vec2 global_unitSize = v->global_unitSize;
+    
     SDL_Renderer* renderer=v->global_renderer;
 
     //init vector bullet player-------
@@ -23,7 +23,7 @@ void bulletInit(global_var *v)
 
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
     {
-        SDL_FRect *target_Rect = create_Frect(-100, -100, global_unitSize.x * 0.5f, global_unitSize.y * 0.5f);
+        SDL_FRect *target_Rect = create_Frect(-100, -100, UNIT_SIZE_X * 0.5f, UNIT_SIZE_Y * 0.5f);
         player_bullet[i].go = create_gameObject(tex, rect_Tex, target_Rect);
         player_bullet[i].free = true;
     }
@@ -32,13 +32,13 @@ void bulletInit(global_var *v)
     //init vector bullet enemies-------
     v->enemy_bullet.bullets = (bullet_obj *)malloc(sizeof(bullet_obj) * ENEMY_BULLET_N);
     bullet_obj *enemy_bullet = v->enemy_bullet.bullets;
-    
+
     tex = create_texture("resources/assets/enemy/enemybullet1.png", renderer);
     rect_Tex = create_rect(12, 5, 20, 20);
 
     for (size_t i = 0; i < ENEMY_BULLET_N; i++)
     {
-        SDL_FRect *target_Rect = create_Frect(-100, -100, global_unitSize.x * 0.5f, global_unitSize.y * 0.5f);
+        SDL_FRect *target_Rect = create_Frect(-100, -100, UNIT_SIZE_X * 0.5f, UNIT_SIZE_Y * 0.5f);
         enemy_bullet[i].go = create_gameObject(tex, rect_Tex, target_Rect);
         enemy_bullet[i].free = true;
     }
@@ -46,15 +46,15 @@ void bulletInit(global_var *v)
     v->shoot_player_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav"); //load explosion sound
 }
 
-void shoot_playerBullet(bullet_obj *player_bullet, type_player *player_plane)
+void shoot_playerBullet(bullet_obj *player_bullet, type_player *player_plane,Mix_Chunk* shoot_playerSound)
 {
 
     for (size_t i = 0; i < PLAYER_BULLET_N; i++)
     {
         if (player_bullet[i].free)
         {
-            //  Mix_PlayChannel(2, shoot_player_sound, 0);
-            //  Mix_ExpireChannel(2,100);
+            Mix_PlayChannel(2,shoot_playerSound, 0);
+            Mix_ExpireChannel(2,100);
             player_bullet[i]
                 .go->target_rect->x = player_plane->go->target_rect->x + player_plane->go->target_rect->w * 0.16f + player_bullet[i].go->target_rect->w * 0.5f;
             player_bullet[i].go->target_rect->y = player_plane->go->target_rect->y - 30;

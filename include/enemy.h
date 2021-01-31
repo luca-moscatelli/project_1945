@@ -25,6 +25,7 @@ typedef struct
     float finishPointY;
     float ExplosionTime;
     float shootCount;
+    int column;
 
 } type_enemy;
 

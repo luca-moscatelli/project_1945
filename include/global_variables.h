@@ -4,12 +4,21 @@
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
-#define STANDARD_VELOCITY (v->unit_size_norm * v->global_delta_time)
+#define UNIT_SIZE_NORM (SCREEN_HEIGHT/SCREEN_HEIGHT)
+#define UNIT_SIZE_X (float)(40*UNIT_SIZE_NORM)
+#define UNIT_SIZE_Y (float)(40*UNIT_SIZE_NORM)
+#define UNIT_SCREEN_WIDTH (int)(SCREEN_WIDTH/UNIT_SIZE_X)
+#define UNIT_SCREEN_HEIGHT (int)(SCREEN_HEIGHT/UNIT_SIZE_Y)
+
+
+#define STANDARD_VELOCITY (UNIT_SIZE_NORM * v->global_delta_time)
 #define N_LIFE 3
 #define MAX_HP 100.f
 
-#define ENEMY_CONST_EXPLOSION_TIME 90.f
+#define ENEMY_CONST_EXPLOSION_TIME 0.75f
 #define ENEMY_N 6
+
+
 
 #include <SDL_image.h>
 #include <SDL_mixer.h>
@@ -21,12 +30,8 @@
 
 typedef struct
 {
-    vec2 global_unitSize;
-
-    float unit_size_norm;
-
-    int global_unitScreenWidth;
-    int global_unitScreenHeight;
+   
+    //variables gameEngine
     float global_delta_time;
 
     Uint64 curr_count;
@@ -43,16 +48,23 @@ typedef struct
 
     Mix_Music *background_music;
 
+    //----------------------
+
     //assets game variables
 
     //texture
 
     SDL_Texture *player_explosion_texture;
+    SDL_Texture *enemyPlane_texture[3];
+    SDL_Texture *enemyExplosion_texture;
+    SDL_Texture *player_texture_plane;
+
+    //rect
     SDL_Rect *Player_explosionTexure_Rect[7];
     SDL_Rect *Enemy_explosionTexure_Rect[6];
-
-    SDL_Texture *player_texture_plane;
     SDL_Rect *player_texRect_plane;
+
+    boolean Enemy_Column_State[UNIT_SCREEN_WIDTH]; //true is free false is locked 
 
     type_player *player_plane;
 
@@ -83,8 +95,6 @@ typedef struct
     float bgVelocity;
 
     float enemyVelocity;
-    SDL_Texture *enemyPlane_texture[3];
-    SDL_Texture *enemyExplosion_texture;
     //SDL_Rect *Enemy_explosionTexure_Rect[6];
     boolean *column;
     Mix_Chunk *enemy_explosion_sound;

@@ -6,26 +6,61 @@
 #include "enemyMng.h"
 // #include "bulletMng.h"
 
+float _getSpawnVectX(boolean *enemyColumn,type_enemy* e)
+{
 
+    int i = 0;
+
+   int count=0;
+
+    while (count<=100)
+    {
+        i = RangedRandDemo(0, UNIT_SCREEN_WIDTH);
+
+        if (enemyColumn[i])
+        {
+            enemyColumn[i]=false;
+            e->column=i;
+            return i*UNIT_SIZE_X+UNIT_SIZE_X*0.5f;
+        }
+
+        count++;
+    }
+
+    return 200.f;
+}
+
+
+int _getEnemyCellIndex(float x_position){
+
+    int i=x_position/UNIT_SCREEN_WIDTH;
+
+    return i;
+}
 
 void enemyInit(global_var *v)
 {
     v->enemies = (type_enemy *)malloc(sizeof(type_enemy) * ENEMY_N);
 
-    type_enemy* enemy=v->enemies;
-    vec2 global_unitSize=v->global_unitSize;
-    SDL_Renderer* renderer=v->global_renderer;
+    type_enemy *enemy = v->enemies;
+    SDL_Renderer *renderer = v->global_renderer;
+
+    for (size_t i = 0; i <UNIT_SCREEN_WIDTH ; i++)
+    {
+        v->Enemy_Column_State[i]=true;
+    }
+    
 
     for (size_t i = 0; i < ENEMY_N; i++)
     {
         v->Enemy_explosionTexure_Rect[i] = create_rect(i * (192 / 6), 0, 192 / 6, 32);
     }
 
-    v->enemyPlane_texture[0] = create_texture("resources/assets/enemy/enemy1_strip3.png",renderer);
-    v->enemyPlane_texture[1] = create_texture("resources/assets/enemy/enemy2_strip3.png",renderer);
-    v->enemyPlane_texture[2] = create_texture("resources/assets/enemy/enemy3_strip3.png",renderer);
+    v->enemyPlane_texture[0] = create_texture("resources/assets/enemy/enemy1_strip3.png", renderer);
+    v->enemyPlane_texture[1] = create_texture("resources/assets/enemy/enemy2_strip3.png", renderer);
+    v->enemyPlane_texture[2] = create_texture("resources/assets/enemy/enemy3_strip3.png", renderer);
 
-    v->enemyExplosion_texture = create_texture("resources/assets/enemy/explosion1_strip6.png",renderer);
+    v->enemyExplosion_texture = create_texture("resources/assets/enemy/explosion1_strip6.png", renderer);
 
     v->enemy_explosion_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion2.wav");
 
@@ -35,10 +70,10 @@ void enemyInit(global_var *v)
         enemy[i].hp = 100;
         SDL_Texture *tex = v->enemyPlane_texture[RangedRandDemo(0, 3)];
         SDL_Rect *texRect = create_rect(0, 0, 32, 32);
-        SDL_FRect *targetRect = create_Frect(global_unitSize.x * RangedRandDemo(0, 15), global_unitSize.y * RangedRandDemo(-20, -10), global_unitSize.x, global_unitSize.y);
+        SDL_FRect *targetRect = create_Frect(_getSpawnVectX(v->Enemy_Column_State,&enemy[i]), UNIT_SIZE_Y * RangedRandDemo(-20, -10), UNIT_SIZE_X, UNIT_SIZE_Y);
         enemy[i].go = create_gameObject(tex, texRect, targetRect);
         enemy[i].state = move;
-        enemy[i].finishPointY = global_unitSize.y * RangedRandDemo(3, v->global_unitScreenHeight - 5);
+        enemy[i].finishPointY = UNIT_SIZE_Y * RangedRandDemo(3, UNIT_SCREEN_HEIGHT - 5);
         enemy[i].ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
     }
 }
@@ -49,7 +84,7 @@ void _destroyEnemy(type_enemy *enemy)
     free(enemy);
 }
 
-void _moveUpdate(type_enemy *e,global_var* v)
+void _moveUpdate(type_enemy *e, global_var *v)
 {
     if (e->go->target_rect->y >= e->finishPointY)
     {
@@ -57,18 +92,16 @@ void _moveUpdate(type_enemy *e,global_var* v)
         return;
     }
 
-    float a = v->enemyVelocity * STANDARD_VELOCITY;
-
     e->go->target_rect->y += v->enemyVelocity * STANDARD_VELOCITY;
 }
 
-void _attackUpdate(type_enemy *e,global_var* v)
+void _attackUpdate(type_enemy *e, global_var *v)
 {
     e->shootCount -= v->global_delta_time;
 
     if (e->shootCount <= 0)
     {
-        shoot_enemyBullet(e,v->enemy_bullet.bullets);
+        shoot_enemyBullet(e, v->enemy_bullet.bullets);
         e->shootCount = RangedRandDemo(300, 5000);
     }
 
@@ -80,87 +113,41 @@ void _attackUpdate(type_enemy *e,global_var* v)
     }
 }
 
-// void _SetFrameExplosion(game_object *go, float ExplosionTime, SDL_Rect *explosionTexure_Rect[])
-// {
-
-//     int index = 0;
-
-//     boolean set = false;
-
-//     if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.83f) && !set)
-//     {
-//         index = 0;
-//         set = true;
-//     }
-//     if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.66f) && !set)
-//     {
-//         index = 1;
-//         set = true;
-//     }
-//     if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.50f) && !set)
-//     {
-//         index = 2;
-//         set = true;
-//     }
-//     if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.33f) && !set)
-//     {
-//         index = 3;
-//         set = true;
-//     }
-//     if (ExplosionTime >= ENEMY_CONST_EXPLOSION_TIME * (0.16f) && !set)
-//     {
-//         index = 4;
-//         set = true;
-//     }
-
-//     if (!set)
-//     {
-//         index = 5;
-//     }
-
-//     go->texture_rect->h = explosionTexure_Rect[index]->h;
-//     go->texture_rect->w = explosionTexure_Rect[index]->w;
-//     go->texture_rect->x = explosionTexure_Rect[index]->x;
-//     go->texture_rect->y = explosionTexure_Rect[index]->y;
-//     return;
-// }
-
-void _deadUpdate(type_enemy *e,global_var* v)
+void _deadUpdate(type_enemy* e, global_var *v)
 {
-    vec2 global_unitSize=v->global_unitSize;
 
     if (e->ExplosionTime <= 0)
     {
-        // _destroyEnemy(e);
-
         e->hp = 100;
-        e->go->target_rect->x = global_unitSize.x * RangedRandDemo(0, 15);
-        e->go->target_rect->y = global_unitSize.y * RangedRandDemo(-20, -10);
+        e->go->target_rect->x = _getSpawnVectX(v->Enemy_Column_State,e);
+        e->go->target_rect->y = UNIT_SIZE_Y * RangedRandDemo(-20, -10);
         e->go->texture = v->enemyPlane_texture[RangedRandDemo(0, 3)];
         e->state = move;
-        e->finishPointY = global_unitSize.y * RangedRandDemo(3, v->global_unitScreenHeight - 5);
+        e->finishPointY = UNIT_SIZE_Y * RangedRandDemo(3, UNIT_SCREEN_HEIGHT - 5);
         e->ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
+        v->Enemy_Column_State[e->column]=true;
+
 
         return;
     }
 
-    e->ExplosionTime -= 0.05f;
+    e->ExplosionTime -= STANDARD_VELOCITY;
 }
 
-void enemyUpdate(type_enemy* enemy,global_var* v)
+void enemyUpdate(type_enemy *enemy, global_var *v)
 {
     for (size_t i = 0; i < ENEMY_N; i++)
     {
         switch (enemy[i].state)
         {
         case move:
-            _moveUpdate(&enemy[i],v);
+            _moveUpdate(&enemy[i], v);
             break;
         case attack:
-            _attackUpdate(&enemy[i],v);
+            _attackUpdate(&enemy[i], v);
             break;
         case dead:
-            _deadUpdate(&enemy[i],v);
+            _deadUpdate(&enemy[i], v);
             break;
         default:
             break;
@@ -173,10 +160,10 @@ void enemyUpdate(type_enemy* enemy,global_var* v)
     }
 }
 
-void renderEnemy(global_var* v)
+void renderEnemy(global_var *v)
 {
     for (size_t i = 0; i < ENEMY_N; i++)
     {
-        renderGameObject(v->enemies[i].go,v->global_renderer);
+        renderGameObject(v->enemies[i].go, v->global_renderer);
     }
 }

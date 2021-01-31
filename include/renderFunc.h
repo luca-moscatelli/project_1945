@@ -8,7 +8,7 @@
 
 
 
-int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect,global_var* v);
+int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect, SDL_Renderer* renderer);
 
 
 void _setFrame(game_object *go,Uint32 plane_frame_n);

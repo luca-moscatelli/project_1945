@@ -648,12 +648,6 @@ begin_code.h
 close_code.h
 ../cmake/sdl2_mixer/include/close_code.h
 
-../include/GuiMng.h
-global_variables.h
-../include/global_variables.h
-stdlib.h
--
-
 ../include/bullet.h
 common.h
 ../include/common.h
@@ -667,6 +661,14 @@ SDL.h
 ../include/SDL.h
 
 ../include/enemy.h
+
+../include/enemyMng.h
+stdlib.h
+-
+bulletMng.h
+../include/bulletMng.h
+global_variables.h
+../include/global_variables.h
 
 ../include/global_variables.h
 SDL_image.h
@@ -692,13 +694,11 @@ common.h
 math.h
 -
 
-C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.c
-bulletMng.h
-C:/Users/39348/Documents/progetti_c/1945-project/src/bulletMng.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.c
+global_variables.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/global_variables.h
 enemy.h
 C:/Users/39348/Documents/progetti_c/1945-project/src/enemy.h
-player.h
-C:/Users/39348/Documents/progetti_c/1945-project/src/player.h
-GuiMng.h
-C:/Users/39348/Documents/progetti_c/1945-project/src/GuiMng.h
+enemyMng.h
+C:/Users/39348/Documents/progetti_c/1945-project/src/enemyMng.h
 

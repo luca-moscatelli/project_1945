@@ -14,26 +14,25 @@
 
 void _initGameAsset(global_var *v)
 {
-    vec2 global_unitSize = vec2_new(v->global_unitSize.x, v->global_unitSize.y);
 
     SDL_Texture *tex = create_texture("resources/assets/map/water.png", v->global_renderer);
     SDL_Rect *rect = create_rect(0, 0, 32, 32);
-    SDL_FRect *frect = create_Frect(0, 0, global_unitSize.x, global_unitSize.y);
+    SDL_FRect *frect = create_Frect(0, 0, UNIT_SIZE_X, UNIT_SIZE_Y);
     v->water = create_gameObject(tex, rect, frect);
 
     tex = create_texture("resources/assets/map/island1.png", v->global_renderer);
     rect = NULL;
-    frect = create_Frect(0, 0, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    frect = create_Frect(0, 0, UNIT_SIZE_X * 1.5f, UNIT_SIZE_Y * 1.5f);
     v->island[0] = create_gameObject(tex, rect, frect);
 
     tex = create_texture("resources/assets/map/island2.png", v->global_renderer);
     rect = NULL;
-    frect = create_Frect(120, 150, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    frect = create_Frect(120, 150, UNIT_SIZE_X * 1.5f, UNIT_SIZE_Y * 1.5f);
     v->island[1] = create_gameObject(tex, rect, frect);
 
     tex = create_texture("resources/assets/map/island3.png", v->global_renderer);
     rect = NULL;
-    frect = create_Frect(200, 200, global_unitSize.x * 1.5f, global_unitSize.y * 1.5f);
+    frect = create_Frect(200, 200, UNIT_SIZE_X * 1.5f, UNIT_SIZE_Y * 1.5f);
 
     v->island[2] = create_gameObject(tex, rect, frect);
     playerInit(v);
@@ -73,7 +72,7 @@ void _input(global_var *v)
                 if (MovePlayer(event.key.keysym.sym, v->player_plane, v->gui))
                     break;
 
-                if (ShootPlayer(event.key.keysym.sym, v->player_plane,v->player_bullet.bullets))
+                if (ShootPlayer(event.key.keysym.sym, v->player_plane,v->player_bullet.bullets,v->shoot_player_sound))
                     break;
             }
 
@@ -108,14 +107,7 @@ global_var *init()
     Mix_Volume(-1, 20); //general volume
     Mix_Volume(2, 40);  //player bullet  volume
 
-    global_v->unit_size_norm = (float)SCREEN_HEIGHT / 480.f;
-
-    global_v->global_unitSize.x = 40 * global_v->unit_size_norm;
-    global_v->global_unitSize.y = 40 * global_v->unit_size_norm;
-
-    global_v->global_unitScreenWidth = SCREEN_WIDTH / global_v->global_unitSize.x;
-    global_v->global_unitScreenHeight = SCREEN_HEIGHT / global_v->global_unitSize.y;
-
+    
     global_v->global_window = SDL_CreateWindow(
         "Project “1945”",
         SDL_WINDOWPOS_UNDEFINED,
@@ -151,9 +143,6 @@ global_var *init()
 
     global_v->enemyVelocity=300.f;
 
-    // SDL_RWops* file = SDL_RWFromFile("resources/assets/extra/Icon.ico","r+");
-
-    // SDL_Surface *icon = IMG_LoadICO_RW(file);
 
     SDL_Surface *icon = IMG_Load("resources/assets/extra/Icon.png");
 

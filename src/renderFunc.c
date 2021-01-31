@@ -5,7 +5,7 @@
 #include "GuiMng.h"
 #include "renderFunc.h"
 
-int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect, global_var *v)
+int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_rect, SDL_Renderer* renderer)
 {
     SDL_FRect rect;
 
@@ -18,12 +18,12 @@ int _renderSea(SDL_Texture *texture, SDL_Rect *texture_rect, SDL_FRect *target_r
     {
         while (rect.y <= SCREEN_HEIGHT)
         {
-            SDL_RenderCopyF(v->global_renderer, texture, texture_rect, &rect);
+            SDL_RenderCopyF(renderer, texture, texture_rect, &rect);
 
-            rect.y += v->global_unitSize.y;
+            rect.y += UNIT_SIZE_Y;
         }
 
-        rect.x += v->global_unitSize.x;
+        rect.x += UNIT_SIZE_X;
         rect.y = target_rect->y;
     }
 
@@ -178,7 +178,7 @@ int renderScene(global_var* v)
 {
     game_object* water=v->water;
 
-    _renderSea(water->texture, water->texture_rect, water->target_rect,v); //1
+    _renderSea(water->texture, water->texture_rect, water->target_rect,v->global_renderer); //1
     _renderIsland(v->island,v->global_renderer);                                                     //2
     _renderPlane(v);                                                      //3
     renderEnemy(v);

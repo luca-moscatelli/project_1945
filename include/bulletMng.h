@@ -10,7 +10,7 @@
 void bulletInit(global_var* v);   //init all bullet
 
 
-void shoot_playerBullet(bullet_obj *player_bullet, type_player *player_plane);//spawn player_bullet
+void shoot_playerBullet(bullet_obj *player_bullet, type_player *player_plane,Mix_Chunk* shoot_playerSound);//spawn player_bullet
 
 
 void shoot_enemyBullet(void *enemy,bullet_obj* enemy_bullet);//spawn enemy_bullet

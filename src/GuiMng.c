@@ -24,7 +24,7 @@ void GuiInit(global_var *v)
     {
         tex = create_texture("resources/assets/ui/life.png",v->global_renderer);
         Frect = create_Frect(SCREEN_WIDTH * 0.02f + (i * SCREEN_WIDTH * 0.07f), v->gui->target_rect->y + v->gui->target_rect->h * 0.20f,
-                             v->global_unitSize.x,  v->global_unitSize.y);
+                             (float)UNIT_SIZE_X,UNIT_SIZE_Y);
         life_icon[i] = create_gameObject(tex, NULL, Frect);
     }
 }
