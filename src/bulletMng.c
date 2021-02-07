@@ -7,6 +7,7 @@
 #include "enemy.h"
 #include "player.h"
 #include "GuiMng.h"
+#include "physicsMng.h"
 
 void bulletInit(global_var *v)
 {
@@ -26,6 +27,7 @@ void bulletInit(global_var *v)
         SDL_FRect *target_Rect = create_Frect(-100, -100, UNIT_SIZE_X * 0.5f, UNIT_SIZE_Y * 0.5f);
         player_bullet[i].go = create_gameObject(tex, rect_Tex, target_Rect);
         player_bullet[i].free = true;
+        addCollider(v->physics->colliderPlayerBullet_List,player_bullet[i].go->collider_rect);
     }
     //--------------------------------
 
@@ -41,6 +43,7 @@ void bulletInit(global_var *v)
         SDL_FRect *target_Rect = create_Frect(-100, -100, UNIT_SIZE_X * 0.5f, UNIT_SIZE_Y * 0.5f);
         enemy_bullet[i].go = create_gameObject(tex, rect_Tex, target_Rect);
         enemy_bullet[i].free = true;
+        addCollider(v->physics->colliderEnemyBullet_List,enemy_bullet[i].go->collider_rect);
     }
     //--------------------------------
     v->shoot_player_sound = Mix_LoadWAV("resources/assets/audio/snd_explosion1.wav"); //load explosion sound

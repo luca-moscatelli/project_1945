@@ -1,6 +1,7 @@
 
 
 #include "SDL.h"
+#include <stdio.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
@@ -9,8 +10,8 @@
 #include "updateObj.h"
 #include "playerMng.h"
 #include "enemyMng.h"
-#include <stdio.h>
 #include "GuiMng.h"
+#include "physicsMng.h"
 
 void _initGameAsset(global_var *v)
 {
@@ -35,10 +36,13 @@ void _initGameAsset(global_var *v)
     frect = create_Frect(200, 200, UNIT_SIZE_X * 1.5f, UNIT_SIZE_Y * 1.5f);
 
     v->island[2] = create_gameObject(tex, rect, frect);
+    v->ricardo_texture=create_texture("resources/assets/map/ricardo_island.jpg",v->global_renderer);
+    physicsInit(v);
     playerInit(v);
     bulletInit(v);
     GuiInit(v);
     enemyInit(v);
+    
     //  powerUp_init();
 }
 

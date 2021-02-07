@@ -1,10 +1,11 @@
 
 
+
 #include "global_variables.h"
 #include "enemy.h"
-// #include <stdlib.h>
 #include "enemyMng.h"
-// #include "bulletMng.h"
+#include "physicsMng.h"
+
 
 float _getSpawnVectX(boolean *enemyColumn,type_enemy* e)
 {
@@ -21,7 +22,7 @@ float _getSpawnVectX(boolean *enemyColumn,type_enemy* e)
         {
             enemyColumn[i]=false;
             e->column=i;
-            return i*UNIT_SIZE_X+UNIT_SIZE_X*0.5f;
+            return i*UNIT_SIZE_X;
         }
 
         count++;
@@ -75,6 +76,8 @@ void enemyInit(global_var *v)
         enemy[i].state = move;
         enemy[i].finishPointY = UNIT_SIZE_Y * RangedRandDemo(3, UNIT_SCREEN_HEIGHT - 5);
         enemy[i].ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
+        addCollider(v->physics->collider_enemy_list,enemy[i].go->collider_rect);
+        
     }
 }
 
@@ -102,7 +105,7 @@ void _attackUpdate(type_enemy *e, global_var *v)
     if (e->shootCount <= 0)
     {
         shoot_enemyBullet(e, v->enemy_bullet.bullets);
-        e->shootCount = RangedRandDemo(300, 5000);
+        e->shootCount = RangedRandDemo(5, 10);
     }
 
     if (e->hp <= 0)
@@ -126,6 +129,7 @@ void _deadUpdate(type_enemy* e, global_var *v)
         e->finishPointY = UNIT_SIZE_Y * RangedRandDemo(3, UNIT_SCREEN_HEIGHT - 5);
         e->ExplosionTime = ENEMY_CONST_EXPLOSION_TIME;
         v->Enemy_Column_State[e->column]=true;
+        v->nemesis_destroy++;
 
 
         return;

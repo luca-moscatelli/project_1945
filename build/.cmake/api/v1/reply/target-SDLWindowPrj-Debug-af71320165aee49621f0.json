@@ -184,7 +184,8 @@
 				25,
 				26,
 				27,
-				28
+				28,
+				29
 			]
 		}
 	],
@@ -336,6 +337,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/renderFunc.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/struct_global.h",
 			"sourceGroupIndex" : 1
 		},
 		{

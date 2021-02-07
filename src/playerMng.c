@@ -13,6 +13,7 @@
 #include "playerMng.h"
 #include "player.h"
 #include "GuiMng.h"
+#include "physicsMng.h"
 
 void playerInit(global_var *v)
 {
@@ -32,6 +33,8 @@ void playerInit(global_var *v)
     v->player_plane->respawn_time = PLAYER_RESPAWN_TIME;
     v->player_plane->state = player_live;
     v->player_plane->go = create_gameObject(v->player_texture_plane, v->player_texRect_plane, targetRect);
+    v->physics->collider_player=v->player_plane->go->collider_rect;
+    
     v->player_plane->hp = 100;
     v->player_plane->life = 3;
 

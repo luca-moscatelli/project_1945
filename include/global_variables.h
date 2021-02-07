@@ -15,8 +15,7 @@
 #define N_LIFE 3
 #define MAX_HP 100.f
 
-#define ENEMY_CONST_EXPLOSION_TIME 0.75f
-#define ENEMY_N 6
+
 
 
 
@@ -27,6 +26,7 @@
 #include "player.h"
 #include "bullet.h"
 #include "enemy.h"
+#include "struct_global.h"
 
 typedef struct
 {
@@ -58,6 +58,7 @@ typedef struct
     SDL_Texture *enemyPlane_texture[3];
     SDL_Texture *enemyExplosion_texture;
     SDL_Texture *player_texture_plane;
+    SDL_Texture *ricardo_texture;
 
     //rect
     SDL_Rect *Player_explosionTexure_Rect[7];
@@ -95,9 +96,18 @@ typedef struct
     float bgVelocity;
 
     float enemyVelocity;
+
+    boolean first;
+
+    int nemesis_destroy;
     //SDL_Rect *Enemy_explosionTexure_Rect[6];
     boolean *column;
     Mix_Chunk *enemy_explosion_sound;
+
+    physicsMng_var* physics;
+
+
+
 
 } global_var;
 

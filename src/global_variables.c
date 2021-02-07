@@ -45,7 +45,7 @@ game_object *create_gameObject(SDL_Texture *texture, SDL_Rect *texture_rect, SDL
     go->texture = texture;
     go->texture_rect = texture_rect;
     go->target_rect = target_rect;
-    go->collider_rect=NULL;
+    go->collider_rect=target_rect;
 
     return go;
 }

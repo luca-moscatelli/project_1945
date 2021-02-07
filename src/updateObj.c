@@ -6,6 +6,7 @@
 #include "powerUp_Mng.h"
 #include "updateObj.h"
 #include "bulletMng.h"
+#include "physicsMng.h"
 
 
 
@@ -13,6 +14,8 @@
 
 int _updateIsland(game_object** island,float bgVelocity,global_var* v)
 {
+
+    
     for (size_t i = 0; i < 3; i++)
     {
 
@@ -53,6 +56,8 @@ void update(global_var* v)
     _updateSea(v);
 
     UpdatePlayer(v);
+
+    physicsUpdate(v);
 
  //   PowerUp_update();
 

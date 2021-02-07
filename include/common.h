@@ -3,6 +3,7 @@
 
 #include "SDL.h"
 
+
 enum boolean_enum
 {
     false,
@@ -23,6 +24,7 @@ typedef struct
     SDL_Rect *texture_rect;
     SDL_FRect *target_rect;
 } texture_rect;
+
 
 
 #endif

@@ -5,6 +5,11 @@
 #define ENEMY
 
 
+#define ENEMY_CONST_EXPLOSION_TIME 0.75f
+#define ENEMY_N 6
+
+
+
 struct game_object;
 
 enum
