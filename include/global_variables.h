@@ -48,6 +48,8 @@ typedef struct
 
     Mix_Music *background_music;
 
+    Mix_Music *ricardo_music;
+
     //----------------------
 
     //assets game variables

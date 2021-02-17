@@ -104,6 +104,8 @@ global_var *init()
 
     global_v->background_music = Mix_LoadMUS("resources/assets/audio/background.mp3");
 
+    global_v->ricardo_music=Mix_LoadMUS("resources\\assets\\audio\\Richardo Milos - DOTA BASS BOOSTED (320  kbps).mp3");
+
     Mix_VolumeMusic(70);
 
     Mix_PlayMusic(global_v->background_music, -1);

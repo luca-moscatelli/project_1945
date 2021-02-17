@@ -131,6 +131,8 @@ void _deadUpdate(type_enemy* e, global_var *v)
         v->Enemy_Column_State[e->column]=true;
         v->nemesis_destroy++;
 
+        
+
 
         return;
     }

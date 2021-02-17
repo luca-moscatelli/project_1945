@@ -15,12 +15,28 @@
 int _updateIsland(game_object** island,float bgVelocity,global_var* v)
 {
 
+    static boolean eneter_ricardo_mode=false;
+    static boolean change_ricardo_texture[3]={false,false,false};
+
+    if(v->nemesis_destroy>=5&&!v->first){
+        Mix_PlayMusic(v->ricardo_music, -1);
+        v->first=true;
+        eneter_ricardo_mode=true;
+    }
+
     
     for (size_t i = 0; i < 3; i++)
     {
 
+
         if (island[i]->target_rect->y >= SCREEN_HEIGHT)
-        {
+        {   
+            if(eneter_ricardo_mode&&!change_ricardo_texture[i]){
+                island[i]->texture=v->ricardo_texture;
+                change_ricardo_texture[i]=true;
+            }
+
+
             island[i]->target_rect->y = RangedRandDemo(-600, -100);
             island[i]->target_rect->x = RangedRandDemo(10, SCREEN_WIDTH - 40);
         }
